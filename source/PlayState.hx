@@ -3696,6 +3696,10 @@ class PlayState extends MusicBeatState
 
 			var char:Character = dad;
 			var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))] + altAnim;
+			if (health > 0.05)
+		    {
+		        health -= 0.025;
+		    } 
 			if(note.gfNote) {
 				char = gf;
 			}
@@ -3723,10 +3727,7 @@ class PlayState extends MusicBeatState
 			note.destroy();
 		}
 		
-		if (health > 0.05 && curStage == 'picod1' && curStage == 'picod2' && curStage == 'mallEvil2')
-		{
-		   health -= 0.02;
-		} 
+		
 	}
 
 	function goodNoteHit(note:Note):Void
