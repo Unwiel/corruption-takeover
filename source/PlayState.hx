@@ -479,13 +479,14 @@ class PlayState extends MusicBeatState
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-320, -120);
+				limo = new FlxSprite(-340, -160);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
 				limo.scrollFactor.set(1.05, 1);
 				limo.animation.play('bop');
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
+				add(limo);
 				
 				skidandnene = new FlxSprite(-500, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
@@ -519,12 +520,13 @@ class PlayState extends MusicBeatState
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-650, -700);
+				limo = new FlxSprite(-700, -640);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
 				limo.scrollFactor.set(1.05, 1);
 				limo.animation.play('bop');
+				add(limo);
 				
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
@@ -607,7 +609,7 @@ class PlayState extends MusicBeatState
 		add(dadGroup);
 		if (curStage == 'picod1' && curStage == 'picod2')
 		    add(u);
-			add(limo);
+			
 			add(niebla);
 			
 		
@@ -738,13 +740,13 @@ class PlayState extends MusicBeatState
 		switch(curStage)
 		{
 		    case 'picod1':
-				insert(members.indexOf(boyfriendGroup) - 1, limo);
-				insert(members.indexOf(dadGroup) + 1, limo);
+				//insert(members.indexOf(boyfriendGroup) - 1, limo);
+				//insert(members.indexOf(dadGroup) + 1, limo);
 				gf.visible = false;
 				
 		    case 'picod2':
-				insert(members.indexOf(boyfriendGroup) - 1 , limo);
-				insert(members.indexOf(dadGroup) + 1, limo);
+				//insert(members.indexOf(boyfriendGroup) - 1 , limo);
+				//insert(members.indexOf(dadGroup) + 1, limo);
 				gf.visible = false;
 				
 			case 'limo':
