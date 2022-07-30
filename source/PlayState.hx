@@ -4092,25 +4092,25 @@ class PlayState extends MusicBeatState
 			switch (curStep)
 			{
 				case 783:
-				   camGame.flash('000000', 1,null, true);
+				   camGame.flash(FlxColor.WHITE, 1,null, true);
 				   skidandnene.animation.play('bop2');
 				   bop1 = false;
 				   bop2 = true;
 				
 				case 911:
-				   camGame.flash('000000', 1,null, true);
+				   camGame.flash(FlxColor.WHITE, 1,null, true);
 				   skidandnene.animation.play('bop3');
 				   bop2 = false;
 				   bop3 = true;
 				
 				case 1295:
-				   camGame.flash('000000', 1,null, true);
+				   camGame.flash(FlxColor.WHITE, 1,null, true);
 				   skidandnene.animation.play('bop4');
 				   bop3 = false;
 				   bop4 = false;
 				
 				case 176:
-				   camGame.flash('000000', 1,null, true);
+				   camGame.flash(FlxColor.WHITE, 1,null, true);
 				   camHUD.visible = false;
 				  
 				   FlxTween.tween(camGame, {zoom: 1.1}, 0.5, {
