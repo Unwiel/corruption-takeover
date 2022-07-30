@@ -113,6 +113,7 @@ class PlayState extends MusicBeatState
 
 	public static var curStage:String = '';
 	public static var isPixelStage:Bool = false;
+	public static var isCorrupt:Bool = false;
 	public static var SONG:SwagSong = null;
 	public static var isStoryMode:Bool = false;
 	public static var storyWeek:Int = 0;
@@ -254,6 +255,7 @@ class PlayState extends MusicBeatState
 	
 	//pico-pene
 	var limo:FlxSprite; 
+	var u:FlxSprite; 
 	var skidandnene:FlxSprite;
 	var overlaypico:FlxSprite;
 	var bopleft:FlxSprite;
@@ -468,13 +470,13 @@ class PlayState extends MusicBeatState
 				add(bopouts);
 				
 			case 'picod1':
-			    var bg:FlxSprite = new FlxSprite(-600, -350);
+			    var bg:FlxSprite = new FlxSprite(-800, -500);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(1000, 230);
+				limo = new FlxSprite(500, -200);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -483,7 +485,7 @@ class PlayState extends MusicBeatState
 				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-350, 200);
+				skidandnene = new FlxSprite(-600, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
 				skidandnene.animation.addByPrefix('bop', 'Survivors Idle0', 24, false);
 				skidandnene.scale.set(0.7, 0.7);
@@ -491,7 +493,7 @@ class PlayState extends MusicBeatState
 				add(skidandnene);
 				skidandnene.antialiasing = ClientPrefs.globalAntialiasing; 
 				
-				var u:FlxSprite = new FlxSprite(-500, -500);
+				u = new FlxSprite(-500, -500);
 				u.loadGraphic(Paths.image('picod1/shaderevil'));
 				u.scale.set(5, 5);
 				u.alpha = 0.3; 
@@ -501,19 +503,21 @@ class PlayState extends MusicBeatState
 			    niebla.velocity.set(-300, 0);
 				niebla.lowestCamZoom = 0.68;
 				niebla.x = -300;
-				niebla.y = -200;
-				niebla.alpha = 0.5; 
+				niebla.y = -100;
+				niebla.alpha = 0.2; 
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
 				add(niebla);
 				
+				
+				
 			case 'picod2':
-			    var bg:FlxSprite = new FlxSprite(-600, -350);
+			    var bg:FlxSprite = new FlxSprite(-800, -500);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-950, -890);
+				limo = new FlxSprite(-800, -700);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -522,7 +526,7 @@ class PlayState extends MusicBeatState
 				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-350, 200);
+				skidandnene = new FlxSprite(-400, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod1/SkidNeneStand');
 				skidandnene.animation.addByPrefix('bop', 'Nene Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop2', 'Nene ALT Stand Idle0', 24, false);
@@ -533,7 +537,7 @@ class PlayState extends MusicBeatState
 				add(skidandnene);
 				skidandnene.antialiasing = ClientPrefs.globalAntialiasing; 
 				
-				var u:FlxSprite = new FlxSprite(-500, -500);
+			   u = new FlxSprite(-500, -500);
 				u.loadGraphic(Paths.image('picod1/shaderevil'));
 				u.scale.set(5, 5);
 				u.alpha = 0.3; 
@@ -543,8 +547,8 @@ class PlayState extends MusicBeatState
 			    niebla.velocity.set(-300, 0);
 				niebla.lowestCamZoom = 0.68;
 				niebla.x = -300;
-				niebla.y = -200;
-				niebla.alpha = 0.5; 
+				niebla.y = -100;
+				niebla.alpha = 0.2; 
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
 				add(niebla);
 				
@@ -554,6 +558,8 @@ class PlayState extends MusicBeatState
 				overlaypico.alpha = 0;
 				add(overlaypico);
 				overlaypico.cameras = [camOther];
+				
+				isCorrupt = true;
 				
 			case 'picod3':
 			   var bg:FlxSprite = new FlxSprite(-100, -290);
@@ -575,14 +581,15 @@ class PlayState extends MusicBeatState
 				bopright.animation.play('bop');
 				add(bopright);
 				bopright.antialiasing = ClientPrefs.globalAntialiasing; 
-			    
+			   
+			    isCorrupt = true;
 		}
 
 		if(isPixelStage) {
 			introSoundsSuffix = '-pixel';
 		}
 		
-		if(curStage == 'picod2' && curStage == 'picod3') {
+		if(isCorrupt) {
 			introSoundsSuffix = '-corrupt';
 		}
 
@@ -721,14 +728,18 @@ class PlayState extends MusicBeatState
 		switch(curStage)
 		{
 		    case 'picod1':
+		        insert(members.indexOf(boyfriendGroup) - 1, u);
+				insert(members.indexOf(dadGroup) - 1, u);
 				insert(members.indexOf(boyfriendGroup) - 1, limo);
 				insert(members.indexOf(dadGroup) - 1, niebla);
-				remove(gf);
+				gf.visible = false;
 				
 		    case 'picod2':
+		        insert(members.indexOf(boyfriendGroup) - 1, u);
+				insert(members.indexOf(dadGroup) - 1, u);
 				insert(members.indexOf(boyfriendGroup) - 1, limo);
 				insert(members.indexOf(dadGroup) - 1, niebla);
-				remove(gf); 
+				gf.visible = false;
 				
 			case 'limo':
 				resetFastCar();
@@ -1456,7 +1467,7 @@ class PlayState extends MusicBeatState
 					antialias = false;
 				}
 				
-				if(curStage == 'picod2' && curStage == 'picod3') {
+				if(isCorrupt) {
 					introAlts = introAssets.get('corrupt');
 				}
 
@@ -3269,12 +3280,12 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '-pixel';
 		}
 		
-		if (PlayState.curStage == 'picod2' && PlayState.curStage == 'picod3')
+		if (PlayState.isCorrupt)
 		{
 			pixelShitPart1 = 'Corruption/';
 		}
 
-		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
+		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating));
 		rating.cameras = [camHUD];
 		rating.screenCenter();
 		rating.x = coolText.x - 40;
@@ -3287,7 +3298,7 @@ class PlayState extends MusicBeatState
 		rating.y -= ClientPrefs.comboOffset[1];
 
 
-		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
+		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo'));
 		comboSpr.cameras = [camHUD];
 		comboSpr.screenCenter();
 		comboSpr.x = coolText.x;
@@ -3329,7 +3340,7 @@ class PlayState extends MusicBeatState
 		var daLoop:Int = 0;
 		for (i in seperatedScore)
 		{
-			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
+			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i)));
 			numScore.cameras = [camHUD];
 			numScore.screenCenter();
 			numScore.x = coolText.x + (43 * daLoop) - 90;
@@ -4055,7 +4066,7 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 		
-		if (SONG.song.toLowerCase() == 'unloaded')
+		if (SONG.song.toLowerCase() == 'loaded')
 		{
 			switch (curStep)
 			{
