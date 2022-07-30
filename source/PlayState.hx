@@ -731,13 +731,13 @@ class PlayState extends MusicBeatState
 		switch(curStage)
 		{
 		    case 'picod1':
-				insert(limo + 1, members.indexOf(boyfriendGroup));
-				insert(limo + 1, members.indexOf(dadGroup));
+				insert(members.indexOf(boyfriendGroup) + 1, limo);
+				insert(members.indexOf(dadGroup) + 1, niebla);
 				gf.visible = false;
 				
 		    case 'picod2':
-				insert(limo + 1, members.indexOf(boyfriendGroup));
-				insert(limo + 1, members.indexOf(dadGroup)); 
+				insert(members.indexOf(boyfriendGroup) + 1, limo);
+				insert(members.indexOf(dadGroup) + 1, niebla);
 				gf.visible = false;
 				
 			case 'limo':
