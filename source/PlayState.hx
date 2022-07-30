@@ -260,7 +260,7 @@ class PlayState extends MusicBeatState
 	var bopright:FlxSprite 
 	var niebla:FlxBackdrop;
 	var bop1:Bool = true;
-    var bop2:Bool = false:
+    var bop2:Bool = false;
 	var bop3:Bool = false;
 	var bop4:Bool = false;
 	
