@@ -254,10 +254,10 @@ class PlayState extends MusicBeatState
 	
 	//pico-pene
 	var limo:FlxSprite; 
-	var skidandnene:FlxSprite
-	var overlaypico:FlxSprite
-	var bopleft:FlxSprite
-	var bopright:FlxSprite 
+	var skidandnene:FlxSprite;
+	var overlaypico:FlxSprite;
+	var bopleft:FlxSprite;
+	var bopright:FlxSprite;
 	var niebla:FlxBackdrop;
 	var bop1:Bool = true;
     var bop2:Bool = false;
