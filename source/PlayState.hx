@@ -200,7 +200,7 @@ class PlayState extends MusicBeatState
 	var trainSound:FlxSound;
 
 	var limoKillingState:Int = 0;
-	var limo:BGSprite;
+	
 	var limoMetalPole:BGSprite;
 	var limoLight:BGSprite;
 	var limoCorpse:BGSprite;
@@ -2497,7 +2497,7 @@ class PlayState extends MusicBeatState
 
 	public var isDead:Bool = false; //Don't mess with this on Lua!!!
 	function doDeathCheck(?skipHealthCheck:Bool = false) {
-		if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead && !curStage == 'mallEvil2')
+		if (((skipHealthCheck && !curStage == 'mallEvil2' && instakillOnMiss) || health <= 0) && !practiceMode && !isDead)
 		{
 			var ret:Dynamic = callOnLuas('onGameOver', []);
 			if(ret != FunkinLua.Function_Stop) {
@@ -4092,25 +4092,25 @@ class PlayState extends MusicBeatState
 			switch (curStep)
 			{
 				case 783:
-				   camGame.flash('0xff000000', 1,null, true);
+				   camGame.flash('000000', 1,null, true);
 				   skidandnene.animation.play('bop2');
 				   bop1 = false;
 				   bop2 = true;
 				
 				case 911:
-				   camGame.flash('0xff000000', 1,null, true);
+				   camGame.flash('000000', 1,null, true);
 				   skidandnene.animation.play('bop3');
 				   bop2 = false;
 				   bop3 = true;
 				
 				case 1295:
-				   camGame.flash('0xff000000', 1,null, true);
+				   camGame.flash('000000', 1,null, true);
 				   skidandnene.animation.play('bop4');
 				   bop3 = false;
 				   bop4 = false;
 				
 				case 176:
-				   camGame.flash('0xff000000', 1,null, true);
+				   camGame.flash('000000', 1,null, true);
 				   camHUD.visible = false;
 				  
 				   FlxTween.tween(camGame, {zoom: 1.1}, 0.5, {
