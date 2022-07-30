@@ -3585,10 +3585,10 @@ class PlayState extends MusicBeatState
 		combo = 0;
 
 		health -= daNote.missHealth * healthLoss;
-		if(instakillOnMiss)
+		if(instakillOnMiss && curStage == 'picod3' && curStage == 'picod2' && curStage == 'picod1')
 		{
 			vocals.volume = 0;
-			if (!curStage == 'mallEvil2')
+			
 			   doDeathCheck(true);
 		}
 
