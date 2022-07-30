@@ -114,6 +114,7 @@ class PlayState extends MusicBeatState
 	public static var curStage:String = '';
 	public static var isPixelStage:Bool = false;
 	public static var isCorrupt:Bool = false;
+	public static var inmortal:Bool = false;
 	public static var SONG:SwagSong = null;
 	public static var isStoryMode:Bool = false;
 	public static var storyWeek:Int = 0;
@@ -469,14 +470,16 @@ class PlayState extends MusicBeatState
 				bopouts.setGraphicSize(Std.int(bopouts.width * 0.8));
 				add(bopouts);
 				
+				inmortal = true;
+				
 			case 'picod1':
-			    var bg:FlxSprite = new FlxSprite(-800, -500);
+			    var bg:FlxSprite = new FlxSprite(-950, -560);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(500, -200);
+				limo = new FlxSprite(380, -150);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -485,7 +488,7 @@ class PlayState extends MusicBeatState
 				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-600, 150);
+				skidandnene = new FlxSprite(-560, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
 				skidandnene.animation.addByPrefix('bop', 'Survivors Idle0', 24, false);
 				skidandnene.scale.set(0.7, 0.7);
@@ -511,13 +514,13 @@ class PlayState extends MusicBeatState
 				
 				
 			case 'picod2':
-			    var bg:FlxSprite = new FlxSprite(-800, -500);
+			    var bg:FlxSprite = new FlxSprite(-950, -560);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-800, -700);
+				limo = new FlxSprite(-650, -400);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -526,8 +529,8 @@ class PlayState extends MusicBeatState
 				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-400, 150);
-				skidandnene.frames = Paths.getSparrowAtlas('picod1/SkidNeneStand');
+				skidandnene = new FlxSprite(-560, 150);
+				skidandnene.frames = Paths.getSparrowAtlas('picod2/SkidNeneStand');
 				skidandnene.animation.addByPrefix('bop', 'Nene Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop2', 'Nene ALT Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop3', 'Nene LAST Stand Idle0', 24, false);
@@ -575,7 +578,7 @@ class PlayState extends MusicBeatState
 				add(bopleft);
 				bopleft.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				bopright = new FlxSprite(0, 250);
+				bopright = new FlxSprite(600, 250);
 				bopright.frames = Paths.getSparrowAtlas('picod3/RightBoppers');
 				bopright.animation.addByPrefix('bop', 'Boppers RIGHT0', 24, false);
 				bopright.animation.play('bop');
@@ -728,10 +731,10 @@ class PlayState extends MusicBeatState
 		switch(curStage)
 		{
 		    case 'picod1':
-		        insert(members.indexOf(boyfriendGroup) - 1, u);
-				insert(members.indexOf(dadGroup) - 1, u);
-				insert(members.indexOf(boyfriendGroup) - 1, limo);
-				insert(members.indexOf(dadGroup) - 1, niebla);
+		        insert(members.indexOf(boyfriendGroup), u);
+				insert(members.indexOf(dadGroup), u);
+				insert(members.indexOf(boyfriendGroup), limo);
+				insert(members.indexOf(dadGroup), niebla);
 				gf.visible = false;
 				
 		    case 'picod2':
@@ -2508,7 +2511,7 @@ class PlayState extends MusicBeatState
 
 	public var isDead:Bool = false; //Don't mess with this on Lua!!!
 	function doDeathCheck(?skipHealthCheck:Bool = false) {
-		if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead)
+		if (((skipHealthCheck && instakillOnMiss) || health <= 0) && !practiceMode && !isDead && !inmortal)
 		{
 			var ret:Dynamic = callOnLuas('onGameOver', []);
 			if(ret != FunkinLua.Function_Stop) {
@@ -3596,7 +3599,7 @@ class PlayState extends MusicBeatState
 		combo = 0;
 
 		health -= daNote.missHealth * healthLoss;
-		if(instakillOnMiss && curStage == 'picod3' && curStage == 'picod2' && curStage == 'picod1')
+		if(instakillOnMiss)
 		{
 			vocals.volume = 0;
 			
@@ -4105,25 +4108,25 @@ class PlayState extends MusicBeatState
 			switch (curStep)
 			{
 				case 783:
-				   camGame.flash(FlxColor.WHITE, 1,null, true);
+				   camGame.flash(FlxColor.BLACK, 1,null, true);
 				   skidandnene.animation.play('bop2');
 				   bop1 = false;
 				   bop2 = true;
 				
 				case 911:
-				   camGame.flash(FlxColor.WHITE, 1,null, true);
+				   camGame.flash(FlxColor.BLACK, 1,null, true);
 				   skidandnene.animation.play('bop3');
 				   bop2 = false;
 				   bop3 = true;
 				
 				case 1295:
-				   camGame.flash(FlxColor.WHITE, 1,null, true);
+				   camGame.flash(FlxColor.BLACK, 1,null, true);
 				   skidandnene.animation.play('bop4');
 				   bop3 = false;
 				   bop4 = false;
 				
-				case 176:
-				   camGame.flash(FlxColor.WHITE, 1,null, true);
+				case 1807:
+				   camGame.flash(FlxColor.BLACK, 1,null, true);
 				   camHUD.visible = false;
 				  
 				   FlxTween.tween(camGame, {zoom: 1.1}, 0.5, {
