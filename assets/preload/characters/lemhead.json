@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-2,
+				75
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Head Idle"
+		},
+		{
+			"offsets": [
+				-230,
+				-79
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Head Up"
+		},
+		{
+			"offsets": [
+				301,
+				-200
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Head Left"
+		},
+		{
+			"offsets": [
+				-341,
+				-160
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Head Right"
+		},
+		{
+			"offsets": [
+				72,
+				-100
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Head Down"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/lemhead",
+	"position": [
+		800,
+		0
+	],
+	"healthicon": "lmod",
+	"flip_x": false,
+	"healthbar_colors": [
+		230,
+		33,
+		69
+	],
+	"camera_position": [
+		-60,
+		300
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

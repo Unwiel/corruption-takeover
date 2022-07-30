@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Boppers.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Blammed Crowd Bob0000" x="0" y="0" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0001" x="0" y="0" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0002" x="0" y="309" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0003" x="0" y="309" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0004" x="0" y="618" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0005" x="0" y="618" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0006" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0007" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0008" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0009" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0010" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0011" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0012" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Blammed Crowd Bob0013" x="0" y="927" width="2167" height="309"/>
+	<SubTexture name="Upper Crowd Bob0000" x="0" y="1236" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0001" x="0" y="1236" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0002" x="0" y="1545" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0003" x="0" y="1545" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0004" x="0" y="1854" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0005" x="0" y="1854" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0006" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0007" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0008" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0009" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0010" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0011" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0012" x="0" y="2163" width="2265" height="309"/>
+	<SubTexture name="Upper Crowd Bob0013" x="0" y="2163" width="2265" height="309"/>
+</TextureAtlas>

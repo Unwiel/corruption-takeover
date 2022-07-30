@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="SkidNeneStand.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Nene Stand Idle0000" x="0" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0001" x="0" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0002" x="605" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0003" x="605" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0004" x="1210" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0005" x="1210" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0006" x="1815" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0007" x="1815" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0008" x="2420" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0009" x="2420" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0010" x="2420" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0011" x="2420" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0012" x="2420" y="0" width="605" height="579"/>
+	<SubTexture name="Nene Stand Idle0013" x="2420" y="0" width="605" height="579"/>
+	<SubTexture name="Nene ALT Stand Idle0000" x="3025" y="0" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0001" x="3025" y="0" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0002" x="0" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0003" x="0" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0004" x="605" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0005" x="605" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0006" x="1210" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0007" x="1210" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0008" x="1815" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0009" x="1815" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0010" x="1815" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0011" x="1815" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0012" x="1815" y="585" width="605" height="585"/>
+	<SubTexture name="Nene ALT Stand Idle0013" x="1815" y="585" width="605" height="585"/>
+	<SubTexture name="Nene LAST Stand Idle0000" x="2420" y="585" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0001" x="2420" y="585" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0002" x="3048" y="585" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0003" x="3048" y="585" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0004" x="0" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0005" x="0" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0006" x="628" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0007" x="628" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0008" x="1256" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0009" x="1256" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0010" x="1884" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0011" x="1884" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0012" x="2512" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene LAST Stand Idle0013" x="2512" y="1170" width="628" height="577"/>
+	<SubTexture name="Nene Worried Idle 30000" x="3140" y="1170" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30001" x="3140" y="1170" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30002" x="0" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30003" x="0" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30004" x="628" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30005" x="628" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30006" x="1256" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30007" x="1256" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30008" x="1884" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30009" x="1884" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30010" x="2512" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30011" x="2512" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30012" x="3140" y="1747" width="628" height="565"/>
+	<SubTexture name="Nene Worried Idle 30013" x="3140" y="1747" width="628" height="565"/>
+</TextureAtlas>

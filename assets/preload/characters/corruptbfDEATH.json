@@ -1,0 +1,56 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-1,
+				91
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "firstDeath",
+			"loop": false,
+			"name": "BF DEATH"
+		},
+		{
+			"offsets": [
+				43,
+				97
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathConfirm",
+			"loop": false,
+			"name": "BF CONFIRM DEATH"
+		},
+		{
+			"offsets": [
+				-8,
+				18
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "deathLoop",
+			"loop": true,
+			"name": "BF LOOP DEATH"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/corruptbfDEATH",
+	"position": [
+		-80,
+		300
+	],
+	"healthicon": "boyfriend1",
+	"flip_x": true,
+	"healthbar_colors": [
+		9,
+		7,
+		25
+	],
+	"camera_position": [
+		70,
+		-70
+	],
+	"sing_duration": 5,
+	"scale": 0.75
+}

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_MODS.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="MODS idle0000" x="0" y="0" width="678" height="143"/>
+	<SubTexture name="MODS selected0000" x="0" y="143" width="678" height="164"/>
+</TextureAtlas>

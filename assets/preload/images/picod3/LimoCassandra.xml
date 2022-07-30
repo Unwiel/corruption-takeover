@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="LimoCassandra.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Limo Boppers0000" x="0" y="0" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0001" x="0" y="0" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0002" x="767" y="0" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0003" x="1534" y="0" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0004" x="2301" y="0" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0005" x="3068" y="0" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0006" x="0" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0007" x="767" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0008" x="767" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0009" x="1534" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0010" x="2301" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0011" x="2301" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0012" x="3068" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0013" x="3068" y="600" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0014" x="0" y="1200" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0015" x="767" y="1200" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0016" x="767" y="1200" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0017" x="1534" y="1200" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0018" x="2301" y="1200" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0019" x="3068" y="1200" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0020" x="0" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0021" x="767" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0022" x="1534" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0023" x="2301" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0024" x="3068" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0025" x="3068" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0026" x="3068" y="1800" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0027" x="0" y="2400" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0028" x="0" y="2400" width="767" height="600"/>
+	<SubTexture name="Limo Boppers0029" x="0" y="2400" width="767" height="600"/>
+</TextureAtlas>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="limo.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Limo Bop0000" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0001" x="0" y="1164" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0002" x="0" y="1164" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0003" x="0" y="2328" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0004" x="0" y="2328" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0005" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0006" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0007" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0008" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0009" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0010" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0011" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0012" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0013" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0014" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0015" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0016" x="0" y="1164" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0017" x="0" y="1164" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0018" x="0" y="2328" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0019" x="0" y="2328" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0020" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0021" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0022" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0023" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0024" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0025" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0026" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0027" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0028" x="0" y="0" width="2060" height="1164"/>
+	<SubTexture name="Limo Bop0029" x="0" y="0" width="2060" height="1164"/>
+</TextureAtlas>

@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Pico Idle"
+		},
+		{
+			"offsets": [
+				22,
+				7
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Pico Left"
+		},
+		{
+			"offsets": [
+				32,
+				17
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Pico Right"
+		},
+		{
+			"offsets": [
+				45,
+				41
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Pico Up"
+		},
+		{
+			"offsets": [
+				40,
+				-63
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Pico Down"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				70
+			],
+			"anim": "shoot",
+			"fps": 24,
+			"name": "Pico Shoot",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				29,
+				-30
+			],
+			"anim": "idle-alt",
+			"fps": 16,
+			"name": "Pico ALT Idle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/picod3",
+	"position": [
+		-95,
+		250
+	],
+	"healthicon": "pico2",
+	"flip_x": false,
+	"healthbar_colors": [
+		63,
+		76,
+		85
+	],
+	"camera_position": [
+		50,
+		10
+	],
+	"sing_duration": 5,
+	"scale": 0.75
+}

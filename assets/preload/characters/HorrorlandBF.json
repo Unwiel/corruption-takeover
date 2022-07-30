@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "BF3 Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				8,
+				-21
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "CORRBF Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				-23
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "CORRBF Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-34,
+				60
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "CORRBF Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-8,
+				-1
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "CORRBF Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				191,
+				62
+			],
+			"anim": "BF CORR",
+			"fps": 24,
+			"name": "BF CORR",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/HorrorlandBF",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "bfcorrupt",
+	"flip_x": true,
+	"healthbar_colors": [
+		230,
+		33,
+		69
+	],
+	"camera_position": [
+		55,
+		-120
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

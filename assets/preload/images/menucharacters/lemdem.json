@@ -1,0 +1,10 @@
+{
+	"idle_anim": "lem idle",
+	"image": "lemdem",
+	"position": [
+		530,
+		73
+	],
+	"scale": 0.85,
+	"confirm_anim": "lem confirm"
+}

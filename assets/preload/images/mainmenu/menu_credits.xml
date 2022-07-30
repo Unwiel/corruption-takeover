@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_CREDITS.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="CREDITS idle0000" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0001" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0002" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0003" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0004" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0005" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0006" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0007" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0008" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0009" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0010" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0011" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0012" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0013" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0014" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0015" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0016" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS idle0017" x="0" y="0" width="687" height="138"/>
+	<SubTexture name="CREDITS selected0000" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0001" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0002" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0003" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0004" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0005" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0006" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0007" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0008" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0009" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0010" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0011" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0012" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0013" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0014" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0015" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0016" x="0" y="138" width="687" height="152"/>
+	<SubTexture name="CREDITS selected0017" x="0" y="138" width="687" height="152"/>
+</TextureAtlas>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NENE.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="nene calm0000" x="0" y="0" width="644" height="490"/>
+	<SubTexture name="nene calm0001" x="0" y="0" width="644" height="490"/>
+	<SubTexture name="nene calm0002" x="0" y="0" width="644" height="490"/>
+	<SubTexture name="nene calm0003" x="0" y="0" width="644" height="490"/>
+	<SubTexture name="nene calm0004" x="0" y="0" width="644" height="490"/>
+	<SubTexture name="nene calm0005" x="0" y="0" width="644" height="490"/>
+	<SubTexture name="nene worried0000" x="644" y="0" width="645" height="487"/>
+	<SubTexture name="nene worried0001" x="644" y="0" width="645" height="487"/>
+	<SubTexture name="nene worried0002" x="644" y="0" width="645" height="487"/>
+	<SubTexture name="nene worried0003" x="644" y="0" width="645" height="487"/>
+	<SubTexture name="nene worried0004" x="644" y="0" width="645" height="487"/>
+	<SubTexture name="nene worried0005" x="644" y="0" width="645" height="487"/>
+	<SubTexture name="neneskid0000" x="1289" y="0" width="644" height="490"/>
+	<SubTexture name="neneskid0001" x="1289" y="0" width="644" height="490"/>
+	<SubTexture name="neneskid0002" x="1289" y="0" width="644" height="490"/>
+	<SubTexture name="neneskid0003" x="1289" y="0" width="644" height="490"/>
+	<SubTexture name="neneskid0004" x="1289" y="0" width="644" height="490"/>
+	<SubTexture name="neneskid0005" x="1289" y="0" width="644" height="490"/>
+</TextureAtlas>

@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "C3Pico Idle"
+		},
+		{
+			"offsets": [
+				20,
+				10
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "C3Pico Left"
+		},
+		{
+			"offsets": [
+				-1,
+				-4
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "C3Pico Right"
+		},
+		{
+			"offsets": [
+				-2,
+				18
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP",
+			"loop": false,
+			"name": "C3Pico Up"
+		},
+		{
+			"offsets": [
+				3,
+				18
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "C3Pico Down"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/C4PicoDay2",
+	"position": [
+		55,
+		315
+	],
+	"healthicon": "pico1",
+	"flip_x": false,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		120,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 0.8
+}

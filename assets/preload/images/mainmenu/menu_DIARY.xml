@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_DIARY.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DIARY idle0000" x="0" y="0" width="687" height="158"/>
+	<SubTexture name="DIARY selected0000" x="0" y="158" width="687" height="175"/>
+</TextureAtlas>

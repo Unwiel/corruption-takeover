@@ -1,0 +1,166 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "BF Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-3
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "BF Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-29,
+				-25
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "BF Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-4,
+				8
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "BF Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-35,
+				-7
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "BF Right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-2,
+				-24
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "BF ALT Left"
+		},
+		{
+			"offsets": [
+				30,
+				-35
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "BF ALT Down"
+		},
+		{
+			"offsets": [
+				-30,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "BF ALT Up"
+		},
+		{
+			"offsets": [
+				-21,
+				-25
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "BF ALT Right"
+		},
+		{
+			"offsets": [
+				108,
+				279
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFTmiss",
+			"loop": false,
+			"name": "BF MISS Left"
+		},
+		{
+			"offsets": [
+				84,
+				267
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHTmiss",
+			"loop": false,
+			"name": "BF MISS Right"
+		},
+		{
+			"offsets": [
+				50,
+				285
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUPmiss",
+			"loop": false,
+			"name": "BF MISS Up"
+		},
+		{
+			"offsets": [
+				91,
+				227
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWNmiss",
+			"loop": false,
+			"name": "BF MISS Down"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/boyfriendcorruptd3",
+	"position": [
+		-80,
+		300
+	],
+	"healthicon": "boyfriend1",
+	"flip_x": true,
+	"healthbar_colors": [
+		9,
+		7,
+		25
+	],
+	"camera_position": [
+		50,
+		-20
+	],
+	"sing_duration": 5,
+	"scale": 0.75
+}

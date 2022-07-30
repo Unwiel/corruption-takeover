@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="BOYFRIEND.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="monster_boyfriend0000" x="0" y="0" width="428" height="491"/>
+	<SubTexture name="monster_boyfriend0001" x="0" y="0" width="428" height="491"/>
+	<SubTexture name="monster_boyfriend0002" x="0" y="0" width="428" height="491"/>
+	<SubTexture name="monster_boyfriend0003" x="0" y="0" width="428" height="491"/>
+	<SubTexture name="monster_boyfriend0004" x="0" y="0" width="428" height="491"/>
+	<SubTexture name="monster_boyfriend0005" x="0" y="0" width="428" height="491"/>
+</TextureAtlas>

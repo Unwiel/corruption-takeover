@@ -1,0 +1,133 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				2
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "CPico Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				4
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "CPico Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				-9
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "CPico Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				12
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "CPico Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				3,
+				14
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "CPico Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				32,
+				-4
+			],
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "CPico ALT Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				23,
+				2
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "CPico ALT Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-12
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "CPico ALT Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-1,
+				14
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "CPico ALT Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				1,
+				12
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "CPico ALT Down",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/C2PicoDay2",
+	"position": [
+		80,
+		330
+	],
+	"healthicon": "pico1",
+	"flip_x": false,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		120,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 0.8
+}

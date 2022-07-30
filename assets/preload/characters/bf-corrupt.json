@@ -1,0 +1,166 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "BF Idle"
+		},
+		{
+			"offsets": [
+				-2,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "BF Left"
+		},
+		{
+			"offsets": [
+				-29,
+				-25
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "BF Down"
+		},
+		{
+			"offsets": [
+				-4,
+				8
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "BF Up"
+		},
+		{
+			"offsets": [
+				-35,
+				-7
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "BF Right"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-24
+			],
+			"anim": "singLEFT-alt",
+			"fps": 24,
+			"name": "BF ALT Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				30,
+				-35
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "BF ALT Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-30,
+				-1
+			],
+			"anim": "singUP-alt",
+			"fps": 24,
+			"name": "BF ALT Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-21,
+				-25
+			],
+			"anim": "singRIGHT-alt",
+			"fps": 24,
+			"name": "BF ALT Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				108,
+				279
+			],
+			"anim": "singLEFTmiss",
+			"fps": 24,
+			"name": "BF MISS Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				84,
+				267
+			],
+			"anim": "singRIGHTmiss",
+			"fps": 24,
+			"name": "BF MISS Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				50,
+				285
+			],
+			"anim": "singUPmiss",
+			"fps": 24,
+			"name": "BF MISS Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				91,
+				227
+			],
+			"anim": "singDOWNmiss",
+			"fps": 24,
+			"name": "BF MISS Down",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/boyfriendcorruptd3",
+	"position": [
+		-80,
+		300
+	],
+	"healthicon": "boyfriend1",
+	"flip_x": true,
+	"healthbar_colors": [
+		9,
+		7,
+		25
+	],
+	"camera_position": [
+		150,
+		150
+	],
+	"sing_duration": 5,
+	"scale": 0.75
+}

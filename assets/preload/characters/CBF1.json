@@ -1,0 +1,133 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-3,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "BF Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-5,
+				-3
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "BF Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-33,
+				-18
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "BF Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-11,
+				11
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "BF Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-40,
+				-7
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "BF Right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-2,
+				-15
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"loop": false,
+			"name": "C3BF Left"
+		},
+		{
+			"offsets": [
+				-4,
+				-12
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "C3BF Idle"
+		},
+		{
+			"offsets": [
+				-39,
+				-34
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"loop": false,
+			"name": "C3BF Down"
+		},
+		{
+			"offsets": [
+				-13,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singUP-alt",
+			"loop": false,
+			"name": "C3BF Up"
+		},
+		{
+			"offsets": [
+				-42,
+				-21
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"loop": false,
+			"name": "C3BF Right"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/CBoyfriend1",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "boyfriend1",
+	"flip_x": true,
+	"healthbar_colors": [
+		9,
+		7,
+		25
+	],
+	"camera_position": [
+		180,
+		80
+	],
+	"sing_duration": 4,
+	"scale": 0.8
+}

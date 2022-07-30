@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="scenes.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="DD10000" x="0" y="0" width="1366" height="768"/>
+	<SubTexture name="DD20000" x="1366" y="0" width="1366" height="768"/>
+	<SubTexture name="DD30000" x="0" y="768" width="1366" height="768"/>
+	<SubTexture name="GF0000" x="1366" y="768" width="1366" height="768"/>
+	<SubTexture name="LemLila0000" x="0" y="1536" width="1366" height="768"/>
+	<SubTexture name="RuvSarv0000" x="1366" y="1536" width="1366" height="768"/>
+	<SubTexture name="SkidNene0000" x="0" y="2304" width="1366" height="768"/>
+	<SubTexture name="TabiWhitty0000" x="1366" y="2304" width="1366" height="768"/>
+</TextureAtlas>

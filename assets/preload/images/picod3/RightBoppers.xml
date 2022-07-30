@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="RightBoppers.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Boppers RIGHT0000" x="0" y="0" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0001" x="0" y="0" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0002" x="322" y="0" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0003" x="322" y="0" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0004" x="644" y="0" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0005" x="644" y="0" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0006" x="0" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0007" x="0" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0008" x="322" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0009" x="322" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0010" x="322" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0011" x="322" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0012" x="322" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0013" x="322" y="464" width="322" height="464"/>
+	<SubTexture name="Boppers RIGHT0014" x="322" y="464" width="322" height="464"/>
+</TextureAtlas>

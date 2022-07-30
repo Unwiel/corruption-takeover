@@ -1,0 +1,155 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Pico Idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				20,
+				8
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "Pico Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-5
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "Pico Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				22
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "Pico Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				3,
+				14
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "Pico Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				10,
+				120
+			],
+			"anim": "shoot",
+			"fps": 20,
+			"name": "Gunshot",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				21
+			],
+			"anim": "reload",
+			"fps": 24,
+			"name": "Reload",
+			"indices": []
+		},
+		{
+			"offsets": [
+				32,
+				-3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle-alt",
+			"indices": [],
+			"name": "Pico ALT Idle"
+		},
+		{
+			"offsets": [
+				25,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "Pico ALT Left"
+		},
+		{
+			"offsets": [
+				3,
+				-14
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "Pico ALT Right"
+		},
+		{
+			"offsets": [
+				1,
+				12
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "Pico ALT Up"
+		},
+		{
+			"offsets": [
+				1,
+				-18
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "Pico ALT Down"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/PicoDay2",
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "pico1",
+	"flip_x": false,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		120,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 0.8
+}

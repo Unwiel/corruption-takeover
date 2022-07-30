@@ -1,0 +1,100 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Pico Idle"
+		},
+		{
+			"offsets": [
+				20,
+				8
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Pico Left"
+		},
+		{
+			"offsets": [
+				0,
+				-5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Pico Right"
+		},
+		{
+			"offsets": [
+				0,
+				22
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Pico Up"
+		},
+		{
+			"offsets": [
+				3,
+				14
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Pico Down"
+		},
+		{
+			"offsets": [
+				10,
+				120
+			],
+			"indices": [],
+			"fps": 20,
+			"anim": "shoot",
+			"loop": false,
+			"name": "Gunshot"
+		},
+		{
+			"offsets": [
+				-2,
+				25
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "reload",
+			"loop": false,
+			"name": "Reload"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/cpico",
+	"position": [
+		0,
+		300
+	],
+	"healthicon": "pico1",
+	"flip_x": false,
+	"healthbar_colors": [
+		183,
+		216,
+		85
+	],
+	"camera_position": [
+		120,
+		-40
+	],
+	"sing_duration": 4,
+	"scale": 0.8
+}

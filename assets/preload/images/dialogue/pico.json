@@ -1,0 +1,63 @@
+{
+	"dialogue_pos": "right",
+	"position": [
+		170,
+		-10
+	],
+	"scale": 1.25,
+	"animations": [
+		{
+			"anim": "talk",
+			"loop_offsets": [
+				1,
+				-7
+			],
+			"idle_offsets": [
+				1,
+				-7
+			],
+			"loop_name": "pico talk",
+			"idle_name": "pico talk"
+		},
+		{
+			"loop_offsets": [
+				0,
+				0
+			],
+			"anim": "excited",
+			"idle_offsets": [
+				0,
+				0
+			],
+			"loop_name": "pico smile",
+			"idle_name": "pico smile"
+		},
+		{
+			"loop_offsets": [
+				0,
+				-1
+			],
+			"anim": "pissed",
+			"idle_offsets": [
+				0,
+				-1
+			],
+			"loop_name": "pico suffer",
+			"idle_name": "pico suffer"
+		},
+		{
+			"loop_offsets": [
+				-4,
+				-5
+			],
+			"anim": "shocked",
+			"idle_offsets": [
+				-4,
+				-5
+			],
+			"loop_name": "pico concern",
+			"idle_name": "pico concern"
+		}
+	],
+	"image": "PICO"
+}

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_OPTIONS.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="OPTIONS IDLE0000" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0001" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0002" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0003" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0004" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0005" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0006" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0007" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0008" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0009" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0010" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0011" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0012" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0013" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0014" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0015" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0016" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0017" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0018" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0019" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0020" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS IDLE0021" x="0" y="0" width="414" height="91"/>
+	<SubTexture name="OPTIONS PICK0000" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0001" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0002" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0003" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0004" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0005" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0006" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0007" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0008" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0009" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0010" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0011" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0012" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0013" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0014" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0015" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0016" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0017" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0018" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0019" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0020" x="414" y="0" width="597" height="134"/>
+	<SubTexture name="OPTIONS PICK0021" x="414" y="0" width="597" height="134"/>
+</TextureAtlas>

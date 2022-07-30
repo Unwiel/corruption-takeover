@@ -1,0 +1,49 @@
+{
+	"storyName": "Point Blank Rap",
+	"difficulties": "",
+	"hideFreeplay": false,
+	"weekBackground": "philly",
+	"weekBefore": "Beginning",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"loaded",
+			"pico1",
+			[
+				255,
+				0,
+				253
+			]
+		],
+		[
+			"unable",
+			"pico1",
+			[
+				255,
+				0,
+				253
+			]
+		],
+		[
+			"one-shot",
+			"pico2",
+			[
+				255,
+				0,
+				253
+			]
+		]
+	],
+	"weekCharacters": [
+		"pico",
+		"",
+		""
+	],
+	"weekName": "Tutorial"
+}

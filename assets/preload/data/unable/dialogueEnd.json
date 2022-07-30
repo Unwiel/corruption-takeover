@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.095,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "I can't handle this anymore..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Nene! Cut the chains!"
+		},
+		{
+			"speed": 0.07,
+			"portrait": "nene",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "Y-You can't go! Look at you, idiot. He's turning you into him!"
+		},
+		{
+			"speed": 0.045,
+			"portrait": "pico",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "AND YOU THINK I STILL WON'T FUCKING TURN INTO HIM IF I STAY HERE?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "angry",
+			"expression": "talk",
+			"text": "CUT. THE DAMN. CHAINS."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "...!"
+		},
+		{
+			"speed": 0.06,
+			"portrait": "skid",
+			"boxState": "normal",
+			"expression": "skid",
+			"text": "Are you gonna be alright, sir?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "Sure I will, kid. I'll get there soon, I just need to talk with Boyfriend, face to face."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I'll catch you soon, Nene. Take care of him, let him lead you to his home, there both will be safer."
+		},
+		{
+			"speed": 0.085,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "Alright, Boyfriend. Time to end this. I saw what that lemon brat did to you in the mall."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "pico",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "I suggest you start talking unless you want me to not MISS bullets on purpose."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "boyfriend",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "....................................."
+		},
+		{
+			"speed": 0.13,
+			"portrait": "Boyfriend",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Heh."
+		}
+	]
+}

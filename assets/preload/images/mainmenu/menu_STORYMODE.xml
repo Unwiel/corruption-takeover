@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_STORYMODE.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="STORYMODE IDLE0000" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0001" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0002" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0003" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0004" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0005" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0006" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0007" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0008" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0009" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0010" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0011" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0012" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0013" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0014" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0015" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0016" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0017" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0018" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0019" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0020" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE IDLE0021" x="0" y="0" width="514" height="102"/>
+	<SubTexture name="STORYMODE PICK0000" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0001" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0002" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0003" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0004" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0005" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0006" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0007" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0008" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0009" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0010" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0011" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0012" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0013" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0014" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0015" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0016" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0017" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0018" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0019" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0020" x="0" y="102" width="541" height="158"/>
+	<SubTexture name="STORYMODE PICK0021" x="0" y="102" width="541" height="158"/>
+</TextureAtlas>

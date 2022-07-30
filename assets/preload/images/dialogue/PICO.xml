@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="PICO.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="pico concern0000" x="0" y="0" width="567" height="519"/>
+	<SubTexture name="pico concern0001" x="0" y="0" width="567" height="519"/>
+	<SubTexture name="pico concern0002" x="0" y="0" width="567" height="519"/>
+	<SubTexture name="pico concern0003" x="0" y="0" width="567" height="519"/>
+	<SubTexture name="pico concern0004" x="0" y="0" width="567" height="519"/>
+	<SubTexture name="pico concern0005" x="0" y="0" width="567" height="519"/>
+	<SubTexture name="pico smile0000" x="567" y="0" width="491" height="516"/>
+	<SubTexture name="pico smile0001" x="567" y="0" width="491" height="516"/>
+	<SubTexture name="pico smile0002" x="567" y="0" width="491" height="516"/>
+	<SubTexture name="pico smile0003" x="567" y="0" width="491" height="516"/>
+	<SubTexture name="pico smile0004" x="567" y="0" width="491" height="516"/>
+	<SubTexture name="pico smile0005" x="567" y="0" width="491" height="516"/>
+	<SubTexture name="pico suffer0000" x="1058" y="0" width="490" height="517"/>
+	<SubTexture name="pico suffer0001" x="1058" y="0" width="490" height="517"/>
+	<SubTexture name="pico suffer0002" x="1058" y="0" width="490" height="517"/>
+	<SubTexture name="pico suffer0003" x="1058" y="0" width="490" height="517"/>
+	<SubTexture name="pico suffer0004" x="1058" y="0" width="490" height="517"/>
+	<SubTexture name="pico suffer0005" x="1058" y="0" width="490" height="517"/>
+	<SubTexture name="pico talk0000" x="1548" y="0" width="491" height="513"/>
+	<SubTexture name="pico talk0001" x="1548" y="0" width="491" height="513"/>
+	<SubTexture name="pico talk0002" x="1548" y="0" width="491" height="513"/>
+	<SubTexture name="pico talk0003" x="1548" y="0" width="491" height="513"/>
+	<SubTexture name="pico talk0004" x="1548" y="0" width="491" height="513"/>
+	<SubTexture name="pico talk0005" x="1548" y="0" width="491" height="513"/>
+</TextureAtlas>
