@@ -473,13 +473,13 @@ class PlayState extends MusicBeatState
 				inmortal = true;
 				
 			case 'picod1':
-			    var bg:FlxSprite = new FlxSprite(-1100, -650);
+			    var bg:FlxSprite = new FlxSprite(-1220, -650);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-50, -200);
+				limo = new FlxSprite(-200, -160);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -511,22 +511,22 @@ class PlayState extends MusicBeatState
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
 				add(niebla);
 				
-				
+				GameOverSubstate.characterName = 'corruptbfDEATH';
 				
 			case 'picod2':
-			    var bg:FlxSprite = new FlxSprite(-1100, -650);
+			    var bg:FlxSprite = new FlxSprite(-1220, -650);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-600, -600);
+				limo = new FlxSprite(-600, -850);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
 				limo.scrollFactor.set(1.05, 1);
 				limo.animation.play('bop');
-				add(limo);
+				
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
 				skidandnene = new FlxSprite(-450, 150);
@@ -544,7 +544,7 @@ class PlayState extends MusicBeatState
 				u.loadGraphic(Paths.image('picod1/shaderevil'));
 				u.scale.set(5, 5);
 				u.alpha = 0.3; 
-				add(u);
+				
 				
 				niebla = new FlxBackdrop(Paths.image('picod1/forgor'), 1, 1);
 			    niebla.velocity.set(-300, 0);
@@ -553,7 +553,7 @@ class PlayState extends MusicBeatState
 				niebla.y = -100;
 				niebla.alpha = 0.2; 
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
-				add(niebla);
+				
 				
 				
 				overlaypico = new FlxSprite();
@@ -563,6 +563,8 @@ class PlayState extends MusicBeatState
 				overlaypico.cameras = [camOther];
 				
 				isCorrupt = true;
+				
+				GameOverSubstate.characterName = 'corruptbfDEATH';
 				
 			case 'picod3':
 			   var bg:FlxSprite = new FlxSprite(-100, -290);
@@ -578,7 +580,7 @@ class PlayState extends MusicBeatState
 				add(bopleft);
 				bopleft.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				bopright = new FlxSprite(600, 250);
+				bopright = new FlxSprite(950, 200);
 				bopright.frames = Paths.getSparrowAtlas('picod3/RightBoppers');
 				bopright.animation.addByPrefix('bop', 'Boppers RIGHT0', 24, false);
 				bopright.animation.play('bop');
@@ -586,6 +588,8 @@ class PlayState extends MusicBeatState
 				bopright.antialiasing = ClientPrefs.globalAntialiasing; 
 			   
 			    isCorrupt = true;
+			
+			    GameOverSubstate.characterName = 'corruptbfDEATH';
 		}
 
 		if(isPixelStage) {
@@ -599,11 +603,17 @@ class PlayState extends MusicBeatState
 		add(gfGroup);
 
 		// Shitty layering but whatev it works LOL
-		if (curStage == 'limo')
-			add(limo);
+		
 
-		add(dadGroup);
+		
 		add(boyfriendGroup);
+		add(dadGroup);
+		if (curStage == 'picod1' && curStage == 'picod2')
+		    add(u);
+			add(limo);
+			add(niebla);
+			
+		
 		
 		if(curStage == 'spooky') {
 			add(halloweenWhite);
@@ -731,13 +741,13 @@ class PlayState extends MusicBeatState
 		switch(curStage)
 		{
 		    case 'picod1':
-				insert(members.indexOf(boyfriendGroup) + 1, limo);
-				insert(members.indexOf(dadGroup) + 1, niebla);
+				insert(members.indexOf(boyfriendGroup) - 1, limo);
+				insert(members.indexOf(dadGroup) - 1, niebla);
 				gf.visible = false;
 				
 		    case 'picod2':
-				insert(members.indexOf(boyfriendGroup) + 1, limo);
-				insert(members.indexOf(dadGroup) + 1, niebla);
+				insert(members.indexOf(boyfriendGroup) - 1 , limo);
+				insert(members.indexOf(dadGroup) - 1, u);
 				gf.visible = false;
 				
 			case 'limo':
@@ -4124,8 +4134,8 @@ class PlayState extends MusicBeatState
 				case 1807:
 				   camGame.flash(FlxColor.BLACK, 1,null, true);
 				   camHUD.visible = false;
-				  
-				   FlxTween.tween(camGame, {zoom: 1.1}, 0.5, {
+				  overlaypico.alpha = 1; 
+				   FlxTween.tween(camGame, {zoom: 1.1}, 1, {
 						onComplete: function(twn:FlxTween)
 						{
 							defaultCamZoom = 1.1;
@@ -4134,12 +4144,7 @@ class PlayState extends MusicBeatState
 				
 
 			   case 1855:
-			       FlxTween.tween(overlaypico, {alpha: 1}, 0.7, {
-						ease: FlxEase.linear,
-						onComplete: function(twn:FlxTween) {
-							
-						}
-					});
+
 			
 				  
 				
