@@ -473,13 +473,13 @@ class PlayState extends MusicBeatState
 				inmortal = true;
 				
 			case 'picod1':
-			    var bg:FlxSprite = new FlxSprite(-1109, -650);
+			    var bg:FlxSprite = new FlxSprite(-1100, -650);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(150, 0);
+				limo = new FlxSprite(-50, -200);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -488,7 +488,7 @@ class PlayState extends MusicBeatState
 				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-500, 150);
+				skidandnene = new FlxSprite(-450, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
 				skidandnene.animation.addByPrefix('bop', 'Survivors Idle0', 24, false);
 				skidandnene.scale.set(0.7, 0.7);
@@ -506,7 +506,7 @@ class PlayState extends MusicBeatState
 			    niebla.velocity.set(-300, 0);
 				niebla.lowestCamZoom = 0.68;
 				niebla.x = -300;
-				niebla.y = -100;
+				niebla.y = -50;
 				niebla.alpha = 0.2; 
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
 				add(niebla);
@@ -514,13 +514,13 @@ class PlayState extends MusicBeatState
 				
 				
 			case 'picod2':
-			    var bg:FlxSprite = new FlxSprite(-1100, -560);
+			    var bg:FlxSprite = new FlxSprite(-1100, -650);
 				bg.loadGraphic(Paths.image('picod1/BG'));
 				bg.scale.set(0.7, 0.7);
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-500, -800);
+				limo = new FlxSprite(-600, -600);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -529,7 +529,7 @@ class PlayState extends MusicBeatState
 				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-500, 150);
+				skidandnene = new FlxSprite(-450, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod2/SkidNeneStand');
 				skidandnene.animation.addByPrefix('bop', 'Nene Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop2', 'Nene ALT Stand Idle0', 24, false);
@@ -731,13 +731,13 @@ class PlayState extends MusicBeatState
 		switch(curStage)
 		{
 		    case 'picod1':
-				insert(members.indexOf(boyfriendGroup) - 5, limo);
-				insert(members.indexOf(dadGroup) - 5, niebla);
+				insert(limo + 1, members.indexOf(boyfriendGroup));
+				insert(limo + 1, members.indexOf(dadGroup));
 				gf.visible = false;
 				
 		    case 'picod2':
-				insert(members.indexOf(boyfriendGroup) - 5, limo);
-				insert(members.indexOf(dadGroup) - 5, niebla);
+				insert(limo + 1, members.indexOf(boyfriendGroup));
+				insert(limo + 1, members.indexOf(dadGroup)); 
 				gf.visible = false;
 				
 			case 'limo':
