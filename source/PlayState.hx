@@ -479,16 +479,15 @@ class PlayState extends MusicBeatState
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-200, -160);
+				limo = new FlxSprite(-320, -120);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
 				limo.scrollFactor.set(1.05, 1);
 				limo.animation.play('bop');
-				add(limo);
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-450, 150);
+				skidandnene = new FlxSprite(-500, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
 				skidandnene.animation.addByPrefix('bop', 'Survivors Idle0', 24, false);
 				skidandnene.scale.set(0.7, 0.7);
@@ -500,7 +499,7 @@ class PlayState extends MusicBeatState
 				u.loadGraphic(Paths.image('picod1/shaderevil'));
 				u.scale.set(5, 5);
 				u.alpha = 0.3; 
-				add(u);
+				
 				
 				niebla = new FlxBackdrop(Paths.image('picod1/forgor'), 1, 1);
 			    niebla.velocity.set(-300, 0);
@@ -509,7 +508,7 @@ class PlayState extends MusicBeatState
 				niebla.y = -50;
 				niebla.alpha = 0.2; 
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
-				add(niebla);
+				
 				
 				GameOverSubstate.characterName = 'corruptbfDEATH';
 				
@@ -520,7 +519,7 @@ class PlayState extends MusicBeatState
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-600, -850);
+				limo = new FlxSprite(-650, -700);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -529,7 +528,7 @@ class PlayState extends MusicBeatState
 				
 				limo.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				skidandnene = new FlxSprite(-450, 150);
+				skidandnene = new FlxSprite(-500, 150);
 				skidandnene.frames = Paths.getSparrowAtlas('picod2/SkidNeneStand');
 				skidandnene.animation.addByPrefix('bop', 'Nene Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop2', 'Nene ALT Stand Idle0', 24, false);
@@ -550,14 +549,14 @@ class PlayState extends MusicBeatState
 			    niebla.velocity.set(-300, 0);
 				niebla.lowestCamZoom = 0.68;
 				niebla.x = -300;
-				niebla.y = -100;
+				niebla.y = -50;
 				niebla.alpha = 0.2; 
 				niebla.antialiasing = ClientPrefs.globalAntialiasing;
 				
 				
 				
 				overlaypico = new FlxSprite();
-				overlaypico.loadGraphic(Paths.image('winter/corruptvignette3'));
+				overlaypico.loadGraphic(Paths.image('winter/corruptvignette1'));
 				overlaypico.alpha = 0;
 				add(overlaypico);
 				overlaypico.cameras = [camOther];
@@ -602,9 +601,7 @@ class PlayState extends MusicBeatState
 
 		add(gfGroup);
 
-		// Shitty layering but whatev it works LOL
-		
-
+		// esto es un poco estupido pero nel -ericio
 		
 		add(boyfriendGroup);
 		add(dadGroup);
@@ -742,12 +739,12 @@ class PlayState extends MusicBeatState
 		{
 		    case 'picod1':
 				insert(members.indexOf(boyfriendGroup) - 1, limo);
-				insert(members.indexOf(dadGroup) - 1, niebla);
+				insert(members.indexOf(dadGroup) + 1, limo);
 				gf.visible = false;
 				
 		    case 'picod2':
 				insert(members.indexOf(boyfriendGroup) - 1 , limo);
-				insert(members.indexOf(dadGroup) - 1, u);
+				insert(members.indexOf(dadGroup) + 1, limo);
 				gf.visible = false;
 				
 			case 'limo':
