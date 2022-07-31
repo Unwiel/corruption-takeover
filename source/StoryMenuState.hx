@@ -254,6 +254,17 @@ class StoryMenuState extends MusicBeatState
 			{
 				selectWeek();
 			}
+			
+			if (curWeek == 0)
+		    {
+		       FlxG.sound.playMusic(Paths.music('takeover_menu_lem'), 0);
+		    }  
+		
+		   if (curWeek == 1)
+		   {
+		        FlxG.sound.music.stop();
+		        FlxG.sound.playMusic(Paths.music('takeover_menu_philly'), 0); 
+		   }
 		}
 		
 		
@@ -387,17 +398,7 @@ class StoryMenuState extends MusicBeatState
 
 		var bullShit:Int = 0;
 		
-		if (curWeek == 0)
-		{
-		    FlxG.sound.music.stop();
-		    FlxG.sound.playMusic(Paths.music('takeover_menu_lem'), 0);
-		}  
 		
-		if (curWeek == 1)
-		{
-		    FlxG.sound.music.stop();
-		    FlxG.sound.playMusic(Paths.music('takeover_menu_philly'), 0); 
-		}
 
 		for (item in grpWeekText.members)
 		{

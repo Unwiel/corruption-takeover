@@ -33,11 +33,11 @@ class MainMenuState extends MusicBeatState
 	private var camAchievement:FlxCamera;
 	
 	var optionShit:Array<String> = [
-		'storymode',
-		'freeplay',
-		'extras',
-		'credits',
-		'options'
+		'STORYMODE',
+		'FREEPLAY',
+		'EXTRAS',
+		'CREDITS',
+		'OPTIONS'
 	];
 
 	var magenta:FlxSprite;
@@ -76,7 +76,7 @@ class MainMenuState extends MusicBeatState
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		
-		var bg2:FlxSprite = new FlxSprite(-200, -200).loadGraphic(Paths.image('mainmenu/blacksidefront'));
+		var bg2:FlxSprite = new FlxSprite(-80, -200).loadGraphic(Paths.image('mainmenu/blacksidefront'));
 		bg2.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg2);
 
@@ -107,7 +107,7 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
+			var menuItem:FlxSprite = new FlxSprite(0, (i * 120)  + offset);
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
@@ -120,13 +120,41 @@ class MainMenuState extends MusicBeatState
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.8));
+			menuItem.setGraphicSize(Std.int(menuItem.width * 0.8));
 			menuItem.updateHitbox();
+			
+			switch (i) 
+			{
+			    case 0:
+			       menuItem.x = -120;
+			       menuItem.y = 100;
+			
+			    case 1:
+			       menuItem.x = -110;
+			       menuItem.y = 120; 
+			
+			    case 2:
+			       menuItem.x = -100;
+			       menuItem.y = 140;
+			    
+			    case 3:
+			       menuItem.x = -90;
+			       menuItem.y = 150;
+			       menuItem.setGraphicSize(Std.int(menuItem.width * 0.5)); 
+			     
+			    case 4:
+			       menuItem.x = -80;
+			       menuItem.y = 160;
+			   
+			
+			
+			} 
+			
 		}
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Corrupt Psych v" + psychEngineVersion, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -234,9 +262,9 @@ class MainMenuState extends MusicBeatState
 
 								switch (daChoice)
 								{
-									case 'storymode':
+									case 'STORYMODE':
 										MusicBeatState.switchState(new StoryMenuState());
-									case 'freeplay':
+									case 'FREEPLAY':
 										MusicBeatState.switchState(new FreeplayState());
 									#if MODS_ALLOWED
 									case 'mods':
@@ -244,9 +272,9 @@ class MainMenuState extends MusicBeatState
 									#end
 									case 'awards':
 										MusicBeatState.switchState(new AchievementsMenuState());
-									case 'credits':
+									case 'CREDITS':
 										MusicBeatState.switchState(new CreditsState());
-									case 'options':
+									case 'OPTIONS':
 										MusicBeatState.switchState(new options.OptionsState());
 								}
 							});
@@ -267,7 +295,6 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.screenCenter(X);
 			spr.x -= 100;
-			spr.y -= 20;
 		});
 	}
 
