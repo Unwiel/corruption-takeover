@@ -479,7 +479,7 @@ class PlayState extends MusicBeatState
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-340, -160);
+				limo = new FlxSprite(-340, -200);
 				limo.frames = Paths.getSparrowAtlas('picod1/limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
@@ -520,7 +520,7 @@ class PlayState extends MusicBeatState
 				add(bg);
 				bg.antialiasing = ClientPrefs.globalAntialiasing;
 				
-				limo = new FlxSprite(-700, -640);
+				limo = new FlxSprite(-700, -700);
 				limo.frames = Paths.getSparrowAtlas('picod2/Limo');
 				limo.animation.addByPrefix('bop', 'Limo Bop0', 24, false);
 				limo.scale.set(1.35, 1.35);
