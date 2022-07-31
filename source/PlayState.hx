@@ -472,8 +472,8 @@ class PlayState extends MusicBeatState
 				
 				inmortal = true;
 				isCorrupt = false;
-				GameOverSubstate.loopSoundName = 'Host-Death';
-				GameOverSubstate.endSoundName = 'Host-Retry';
+				GameOverSubstate.loopSoundName = 'Host_Death';
+				GameOverSubstate.endSoundName = 'Host_Retry';
 				
 			case 'picod1':
 			    var bg:FlxSprite = new FlxSprite(-1220, -650);
@@ -516,8 +516,8 @@ class PlayState extends MusicBeatState
 				
 				GameOverSubstate.characterName = 'corruptbfDEATH';
 				isCorrupt = false;
-				GameOverSubstate.loopSoundName = 'Host-Death';
-				GameOverSubstate.endSoundName = 'Host-Retry';
+				GameOverSubstate.loopSoundName = 'Host_Death';
+				GameOverSubstate.endSoundName = 'Host_Retry';
 				
 			case 'picod2':
 			    var bg:FlxSprite = new FlxSprite(-1220, -650);
@@ -598,8 +598,8 @@ class PlayState extends MusicBeatState
 			
 			    GameOverSubstate.characterName = 'corruptbfDEATH';
 			    
-				GameOverSubstate.loopSoundName = 'Host-Death';
-				GameOverSubstate.endSoundName = 'Host-Retry';
+				GameOverSubstate.loopSoundName = 'Host_Death';
+				GameOverSubstate.endSoundName = 'Host_Retry';
 		}
 
 		if(isPixelStage) {

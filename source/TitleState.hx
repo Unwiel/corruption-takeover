@@ -60,7 +60,7 @@ class TitleState extends MusicBeatState
 	var credGroup:FlxGroup;
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
-	var ngSpr:FlxSprite;
+	var corruption:FlxSprite;
 
 	var curWacky:Array<String> = [];
 
@@ -237,7 +237,7 @@ class TitleState extends MusicBeatState
 			// music.play();
 
 			if(FlxG.sound.music == null) {
-				FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				FlxG.sound.playMusic(Paths.music('takeover_menu_lem'), 0);
 
 				FlxG.sound.music.fadeIn(4, 0, 0.7);
 			}
@@ -313,9 +313,9 @@ class TitleState extends MusicBeatState
 			gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 	
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
-		add(gfDance);
+		//add(gfDance);
 		gfDance.shader = swagShader.shader;
-		add(logoBl);
+		//add(logoBl);
 		//logoBl.shader = swagShader.shader;
 
 		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
@@ -341,12 +341,12 @@ class TitleState extends MusicBeatState
 		titleText.animation.play('idle');
 		titleText.updateHitbox();
 		// titleText.screenCenter(X);
-		add(titleText);
+		//add(titleText);
 
-		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
+		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('mainmenu/logo'));
 		logo.screenCenter();
 		logo.antialiasing = ClientPrefs.globalAntialiasing;
-		// add(logo);
+		add(logo);
 
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
@@ -365,13 +365,13 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
-		add(ngSpr);
-		ngSpr.visible = false;
-		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
-		ngSpr.updateHitbox();
-		ngSpr.screenCenter(X);
-		ngSpr.antialiasing = true;
+		corruption = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('PF_titlelogo'));
+		add(corruption);
+		corruption.visible = false;
+		corruption.setGraphicSize(Std.int(corruption.width * 0.8));
+		corruption.updateHitbox();
+		corruption.screenCenter(X);
+		corruption.antialiasing = true;
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
@@ -444,8 +444,7 @@ class TitleState extends MusicBeatState
 			{
 				if(titleText != null) titleText.animation.play('press');
 
-				FlxG.camera.flash(FlxColor.WHITE, 1);
-				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
+				FlxG.camera.fade(FlxColor.BLACK, 1);
 
 				transitioning = true;
 				// FlxG.sound.music.stop();
@@ -459,7 +458,7 @@ class TitleState extends MusicBeatState
 					}
 					closedState = true;
 				});
-				// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
+				//FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 			}
 			else if(easterEggEnabled)
 			{
@@ -606,11 +605,11 @@ class TitleState extends MusicBeatState
 					#end
 				case 7:
 					addMoreText('newgrounds', -40);
-					ngSpr.visible = true;
+					corruption.visible = true;
 				// credTextShit.text += '\nNewgrounds';
 				case 8:
 					deleteCoolText();
-					ngSpr.visible = false;
+					corruption.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
@@ -647,9 +646,9 @@ class TitleState extends MusicBeatState
 	{
 		if (!skippedIntro)
 		{
-			remove(ngSpr);
+			remove(corruption);
 
-			FlxG.camera.flash(FlxColor.WHITE, 4);
+			FlxG.camera.flash(FlxColor.BLACK, 4);
 			remove(credGroup);
 			skippedIntro = true;
 		}

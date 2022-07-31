@@ -255,6 +255,8 @@ class StoryMenuState extends MusicBeatState
 				selectWeek();
 			}
 		}
+		
+		if (week
 
 		if (controls.BACK && !movedBack && !selectedWeek)
 		{
@@ -308,6 +310,9 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.campaignScore = 0;
 			PlayState.campaignMisses = 0;
+			
+			
+			
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				LoadingState.loadAndSwitchState(new PlayState(), true);
@@ -381,6 +386,18 @@ class StoryMenuState extends MusicBeatState
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
 
 		var bullShit:Int = 0;
+		
+		if (curWeek == 0)
+		{
+		    FlxG.sound.music.stop();
+		    FlxG.sound.playMusic(Paths.music('takeover_menu_lem'), 0);
+		}  
+		
+		if (curWeek == 1)
+		{
+		    FlxG.sound.music.stop();
+		    FlxG.sound.playMusic(Paths.music('takeover_menu_philly'), 0); 
+		}
 
 		for (item in grpWeekText.members)
 		{
