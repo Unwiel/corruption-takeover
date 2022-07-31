@@ -1,65 +1,92 @@
-local xx = 0;
-local yy = 0;
+--change this ones--
+local camMovement = 50
+local velocity = 10
 
--- change just this! this is the number of pixels added for each movement.
-local ofs = 35;
+--leave this ones alone--
+local campointx = 0
+local campointy = 0
+local camlockx = 0
+local camlocky = 0
+local camlock = false
+local bfturn = false
 
--- helper shit lol.
--- https://stackoverflow.com/a/22831842
-function string.starts(String, Start)
-    return string.sub(String, 1, string.len(Start)) == Start
+	
+function onMoveCamera(focus)
+	if focus == 'boyfriend' then
+	campointx = getProperty('camFollow.x')
+	campointy = getProperty('camFollow.y')
+	bfturn = true
+	camlock = false
+	setProperty('cameraSpeed', 1)
+	
+	elseif focus == 'dad' then
+	campointx = getProperty('camFollow.x')
+	campointy = getProperty('camFollow.y')
+	bfturn = false
+	camlock = false
+	setProperty('cameraSpeed', 1)
+	
+	end
 end
--- hey use this if you want (usage: "local x, y = getCharacterCamPos('bf')").
-function getCharacterCamPos(char)
-    local x = getMidpointX(char)
-    local y = getMidpointY(char)
 
-    if char == 'dad' then
-        x = x + 150
-        y = y - 100
-    elseif char == 'boyfriend' then
-        x = x - 100
-        y = y - 100
-    end
 
-    -- idk, this is just magic!!!!
-    local gayX = getProperty('camFollow.x')
-    local gayY = getProperty('camFollow.y')
-    if not gayX == x then x = x + gayX - x end
-    if not gayY == x then y = y + gayY - y end
+function goodNoteHit(id, direction, noteType, isSustainNote)
+	if bfturn then
+		if direction == 0 then
+			camlockx = campointx - camMovement
+			camlocky = campointy
+		elseif direction == 1 then
+			camlocky = campointy + camMovement
+			camlockx = campointx
+		elseif direction == 2 then
+			camlocky = campointy - camMovement
+			camlockx = campointx
+		elseif direction == 3 then
+			camlockx = campointx + camMovement
+			camlocky = campointy
+		end
+	runTimer('camreset', 1)
+	
+	camlock = true
+	end	
+end
+--teninete mantequilla was here--
+		-- delete this if you dont want the oponent to move the camera
+function opponentNoteHit(id, direction, noteType, isSustainNote)
+	if not bfturn then
+		if direction == 0 then
+			camlockx = campointx - camMovement
+			camlocky = campointy
+		elseif direction == 1 then
+			camlocky = campointy + camMovement
+			camlockx = campointx
+		elseif direction == 2 then
+			camlocky = campointy - camMovement
+			camlockx = campointx
+		elseif direction == 3 then
+			camlockx = campointx + camMovement
+			camlocky = campointy
+		end
+	--nice--
+	runTimer('camreset', 1)
+	
+	camlock = true
+	end	
+end
 
-    return x, y
+function onTimerCompleted(tag, loops, loopsLeft)
+	if tag == 'camreset' then
+	camlock = false
+	setProperty('cameraSpeed', 1)
+	setProperty('camFollow.x', campointx)
+	setProperty('camFollow.y', campointy)
+	end
 end
 
 function onUpdate()
-    if not inGameOver then
-        if mustHitSection then
-            if gfSection then
-                check('gf')
-            else
-                check('boyfriend')
-            end
-        else
-            check('dad')
-        end
-    end
+	if camlock then
+	setProperty('camFollow.x', camlockx)
+	setProperty('camFollow.y', camlocky)
+	end
 end
-
-function check(char)
-    if not getProperty(char .. '.stunned') then
-        local name = getProperty(char .. '.animation.curAnim.name');
-        xx, yy = getCharacterCamPos(char)
-
-        if string.starts(name, 'singLEFT') then
-            triggerEvent('Camera Follow Pos', xx - ofs, yy)
-        elseif string.starts(name, 'singRIGHT') then
-            triggerEvent('Camera Follow Pos', xx + ofs, yy)
-        elseif string.starts(name, 'singUP') then
-            triggerEvent('Camera Follow Pos', xx, yy - ofs)
-        elseif string.starts(name, 'singDOWN') then
-            triggerEvent('Camera Follow Pos', xx, yy + ofs)
-        elseif string.starts(name, 'idle') then
-            triggerEvent('Camera Follow Pos', xx, yy)
-        end
-    end
-end
+	-- cringe camera EWW --
