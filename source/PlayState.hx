@@ -471,7 +471,7 @@ class PlayState extends MusicBeatState
 				add(bopouts);
 				
 				inmortal = true;
-				isCorrupted = false;
+				isCorrupt = false;
 				GameOverSubstate.loopSoundName = 'Host-Death';
 				GameOverSubstate.endSoundName = 'Host-Retry';
 				
@@ -515,7 +515,7 @@ class PlayState extends MusicBeatState
 				
 				
 				GameOverSubstate.characterName = 'corruptbfDEATH';
-				isCorrupted = false;
+				isCorrupt = false;
 				GameOverSubstate.loopSoundName = 'Host-Death';
 				GameOverSubstate.endSoundName = 'Host-Retry';
 				
