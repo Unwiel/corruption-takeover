@@ -25,12 +25,11 @@ import sys.io.File;
  */
 class SUtil
 {
-    private static var cutscenesArr:Array<String> = ["oneshotcut", "testVideo"];
 	public static var getIaPath:String = lime.system.System.applicationStorageDirectory;
 	/**
 	 * A simple check function
 	 */
-	public static function doTheCheck()
+	public static function check()
 	{
 		#if android
 		if (!Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
@@ -61,11 +60,8 @@ class SUtil
 
 			if (!FileSystem.exists(SUtil.getPath() + 'assets/videos'))
 				FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
-			
-			for (vid in cutscenesArr) {
-		        SUtil.copyContent(Paths.video(vid), SUtil.getPath() + Paths.video(vid));
-		    } 
-			
+		        SUtil.copyContent(Paths.video('oneshotcut'), SUtil.getPath() + Paths.video('oneshotcut'));
+		    
 		}
 		#end
 	}
@@ -81,8 +77,7 @@ class SUtil
 		return '';
 		#end
 	}
-	
-	
+
 	/**
 	 * Uncaught error handler original made by: sqirra-rng
 	 */
