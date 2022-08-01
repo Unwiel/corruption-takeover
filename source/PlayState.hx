@@ -4179,6 +4179,7 @@ class PlayState extends MusicBeatState
 					blackScreen.cameras = [camHUD];
 			        var video:VideoSprite = new VideoSprite();
 			        video.cameras = [camHUD];
+			        video.playVideo(Paths.video('oneshotcut'), false);
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
 		            healthBar.alpha = 0;
@@ -4200,7 +4201,7 @@ class PlayState extends MusicBeatState
 		                healthBarBG.alpha = 1;  
 
 		            }
-		            video.playVideo(Paths.video('oneshotcut'), false);
+		            
 		
 		       case 1663:
 		            camGame.flash(FlxColor.BLACK, 1,null, true);
