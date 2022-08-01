@@ -273,6 +273,7 @@ class PlayState extends MusicBeatState
 	var keysPressed:Array<Bool> = [];
 	var boyfriendIdleTime:Float = 0.0;
 	var boyfriendIdled:Bool = false;
+	var video:VideoSprite;
 
 	// Lua shit
 	public static var instance:PlayState;
@@ -602,7 +603,11 @@ class PlayState extends MusicBeatState
 				overlaypico.loadGraphic(Paths.image('winter/corruptvignette1'));
 				overlaypico.alpha = 0;
 				add(overlaypico);
-				overlaypico.cameras = [camOther]; 
+				overlaypico.cameras = [camOther];
+				
+				video = new VideoSprite();
+			    video.cameras = [camHUD];
+			    add(video);
 			
 			    GameOverSubstate.characterName = 'corruptbfDEATH';
 			    
@@ -4175,10 +4180,9 @@ class PlayState extends MusicBeatState
 			{
 			   case 1119:
                     
-			        var video:VideoSprite = new VideoSprite();
-			        video.cameras = [camHUD];
-			        video.playVideo(Paths.video('oneshotcut'));
-			        add(video);
+			        
+			        video.playVideo(SUtil.getPath2 + Paths.video('oneshotcut'), false);
+
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
 		            scoreTxt.visible = false;
