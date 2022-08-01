@@ -21,7 +21,7 @@ class Paths
 {
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 	
-	inline public static var VIDEO_EXT = "";
+	inline public static var VIDEO_EXT = ".mp4";
 
 	#if MODS_ALLOWED
 	#if (haxe >= "4.0.0")
@@ -147,7 +147,7 @@ class Paths
 			return file;
 		}
 		#end
-		return 'assets/videos/$key';
+		return SUtil.getPath2() + 'assets/videos/$key.$VIDEO_EXT';
 	}
 
 	static public function sound(key:String, ?library:String):Dynamic
