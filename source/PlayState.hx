@@ -4174,9 +4174,7 @@ class PlayState extends MusicBeatState
 			switch (curStep)
 			{
 			   case 1119:
-                    var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.cameras = [camHUD];
+                    
 			        var video:VideoSprite = new VideoSprite();
 			        video.cameras = [camHUD];
 			        video.playVideo(Paths.video('oneshotcut'), false);
@@ -4186,6 +4184,9 @@ class PlayState extends MusicBeatState
 		            healthBarBG.alpha = 0; 
 		           
 	           case 1376:
+	                  var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.cameras = [camHUD];
 	                  iconP1.alpha = 1;
 		              iconP2.alpha = 1;
 		               healthBar.alpha = 1;
