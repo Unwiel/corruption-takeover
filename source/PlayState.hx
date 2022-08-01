@@ -3721,7 +3721,7 @@ class PlayState extends MusicBeatState
 
 			var char:Character = dad;
 			var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))] + altAnim;
-			if (health > 0.05)
+			if (health > 0.05 && !dad.curCharacter == 'picod3')
 		    {
 		        health -= 0.025;
 		    } 
