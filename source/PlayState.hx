@@ -4200,7 +4200,7 @@ class PlayState extends MusicBeatState
 		                healthBarBG.alpha = 1;  
 
 		            }
-		            video.playVideo(Paths.videos('oneshotcut'), false);
+		            video.playVideo(Paths.video('oneshotcut'), false);
 		
 		       case 1663:
 		            camGame.flash(FlxColor.BLACK, 1,null, true);
