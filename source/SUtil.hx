@@ -25,7 +25,7 @@ import sys.io.File;
  */
 class SUtil
 {
-	public static var getIaPath:String = lime.system.System.applicationStorageDirectory;
+	
 	/**
 	 * A simple check function
 	 */
@@ -58,8 +58,8 @@ class SUtil
 			if (!FileSystem.exists(SUtil.getPath()))
 				FileSystem.createDirectory(SUtil.getPath());
 
-			if (!FileSystem.exists(SUtil.getPath() + 'assets/videos'))
-				FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
+			if (!FileSystem.exists(SUtil.getPath() + 'assets'))
+				FileSystem.createDirectory(SUtil.getPath() + 'assets');
 		        SUtil.copyContent(Paths.video('oneshotcut'), SUtil.getPath() + Paths.video('oneshotcut'));
 		    
 		}
