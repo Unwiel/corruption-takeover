@@ -4177,9 +4177,10 @@ class PlayState extends MusicBeatState
                     
 			        var video:VideoSprite = new VideoSprite();
 			        video.cameras = [camHUD];
-			        video.playVideo(Paths.video('oneshotcut'), false);
+			        video.playVideo(Paths.video('oneshotcut'));
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
+		            scoreTxt.visible = false;
 		            healthBar.alpha = 0;
 		            healthBarBG.alpha = 0; 
 		           
@@ -4190,8 +4191,9 @@ class PlayState extends MusicBeatState
 	                  iconP1.alpha = 1;
 		              iconP2.alpha = 1;
 		               healthBar.alpha = 1;
-		                healthBarBG.alpha = 1;   
-	                  FlxTween.tween(blackScreen, {alpha: 0}, 0.7, {
+		                healthBarBG.alpha = 1;  
+		                scoreTxt.visible = true;
+	                  FlxTween.tween(blackScreen, {alpha: 0}, 1, {
 						   ease: FlxEase.linear,
 						   onComplete: function(twn:FlxTween) {
 							   remove(blackScreen);
@@ -4204,10 +4206,10 @@ class PlayState extends MusicBeatState
 		            camGame.flash(FlxColor.BLACK, 1,null, true);
 				   camHUD.visible = false;
 				  overlaypico.alpha = 1; 
-				   FlxTween.tween(camGame, {zoom: 1.1}, 1, {
+				   FlxTween.tween(camGame, {zoom: 1.25}, 0.1, {
 						onComplete: function(twn:FlxTween)
 						{
-							defaultCamZoom = 1.1;
+							defaultCamZoom = 1.25;
 						}
 					});
 			}
