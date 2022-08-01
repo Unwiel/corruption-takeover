@@ -1,9 +1,10 @@
 package;
 
 #if android
-import android.Tools;
 import android.Permissions;
 import android.PermissionsList;
+import android.os.Build.VERSION;
+import android.os.Environment;
 #end
 import lime.app.Application;
 import openfl.events.UncaughtErrorEvent;
@@ -45,10 +46,7 @@ class SUtil
 	public static function getPathVideo():String
 	{
 		#if android
-		if (aDir != null && aDir.length > 0)
-			return aDir;
-		else
-			return aDir = Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
+		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
 		#else
 		return '';
 		#end
@@ -60,15 +58,15 @@ class SUtil
 		if (!Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{
 			Permissions.requestPermissions([PermissionsList.READ_EXTERNAL_STORAGE, PermissionsList.WRITE_EXTERNAL_STORAGE]);
-			SUtil.applicationAlert('Permissions', "if you accepted the permissions all good if not expect a crash" + '\n' + 'Press Ok to see what happens');//shitty way to stop the app
+			SUtil.applicationAlert('Permissions', "if you accepted the permissions all good if not expect a " + '\n' + 'Press Ok to see what happens');//shitty way to stop the app
 		}
 
 		if (Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{
-			if (!FileSystem.exists(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/'))
-				FileSystem.createDirectory(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/');
+			if (!FileSystem.exists(SUtil.getPathVideo()))
+				FileSystem.createDirectory(SUtil.getPathVideo());
 
-			//una manera tonta del video pero mew
+			//una manera tonta para extraer el video video pero nel
 		
 		   if (!FileSystem.exists(SUtil.getPathVideo() + 'assets/videos')) {
 	           FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
