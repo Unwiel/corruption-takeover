@@ -121,9 +121,7 @@
         <haxelib name="extension-webview" if="android"/>
         <haxelib name="extension-androidtools" if="android"/>
         
-    <config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
-    <config:android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android"/>
-
+    
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
 
@@ -170,6 +168,9 @@
 	<haxedef name="HXCPP_CHECK_POINTER" if="release" />
 	<haxedef name="HXCPP_STACK_LINE" if="release" />
 
+        <!-- Android stuff: thanks Yoshi Engine -->
+	<android permission="android.permission.ACCESS_NETWORK_STATE"/>
+	<android permission="android.permission.INTERNET"/>
 
 	
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
