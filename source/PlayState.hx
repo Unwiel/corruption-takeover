@@ -4178,6 +4178,7 @@ class PlayState extends MusicBeatState
 			        var video:VideoSprite = new VideoSprite();
 			        video.cameras = [camHUD];
 			        video.playVideo(Paths.video('oneshotcut'));
+			        add(video);
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
 		            scoreTxt.visible = false;
