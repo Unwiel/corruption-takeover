@@ -1,5 +1,5 @@
 --change this ones--
-local camMovement = 50
+local camMovement = 30
 local velocity = 10
 
 --leave this ones alone--
