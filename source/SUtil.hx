@@ -56,14 +56,14 @@ class SUtil
 		if (Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
 			&& Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
 		{
-			if (!FileSystem.exists(SUtil.getPath2()))
-				FileSystem.createDirectory(SUtil.getPath2());
+			if (!FileSystem.exists(SUtil.getPath()))
+				FileSystem.createDirectory(SUtil.getPath());
 
-			if (!FileSystem.exists(SUtil.getPath2() + 'assets/videos/'))
-				FileSystem.createDirectory(SUtil.getPath2() + 'assets/videos/');
+			if (!FileSystem.exists(SUtil.getPath() + 'assets/videos'))
+				FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
 			
 			for (vid in cutscenesArr) {
-		        SUtil.copyContent(Paths.video(vid), SUtil.getPath2() + Paths.video(vid));
+		        SUtil.copyContent(Paths.video(vid), SUtil.getPath() + Paths.video(vid));
 		    } 
 			
 		}
@@ -73,7 +73,7 @@ class SUtil
 	/**
 	 * This returns the external storage path that the game will use
 	 */
-	public static function getPath2():String
+	public static function getPath():String
 	{
 		#if android
 		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
@@ -82,15 +82,7 @@ class SUtil
 		#end
 	}
 	
-	public static function getPath():String
-	{
-		#if (android && MODS_ALLOWED) 
-		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
-		#else
-		return '';
-		#end
-	}
-
+	
 	/**
 	 * Uncaught error handler original made by: sqirra-rng
 	 */
@@ -119,10 +111,10 @@ class SUtil
 
 			try
 			{
-				if (!FileSystem.exists(SUtil.getPath2() + 'crash/'))
-					FileSystem.createDirectory(SUtil.getPath2() + 'crash/');
+				if (!FileSystem.exists(SUtil.getPath() + 'crash/'))
+					FileSystem.createDirectory(SUtil.getPath() + 'crash/');
 
-				File.saveContent(SUtil.getPath2()
+				File.saveContent(SUtil.getPath()
 					+ 'crash/'
 					+ Application.current.meta.get('file')
 					+ '_'
@@ -148,10 +140,10 @@ class SUtil
 	{
 		try
 		{
-			if (!FileSystem.exists(SUtil.getPath2() + 'saves/'))
+			if (!FileSystem.exists(SUtil.getPath() + 'saves/'))
 				FileSystem.createDirectory(SUtil.getPath() + 'saves/');
 
-			File.saveContent(SUtil.getPath2() + 'saves/' + fileName + fileExtension, fileData);
+			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
 			SUtil.applicationAlert('Done!', 'File Saved Successfully!');
 		}
 		catch (e:Dynamic)
