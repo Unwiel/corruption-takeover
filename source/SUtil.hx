@@ -25,7 +25,7 @@ import sys.io.File;
  */
 class SUtil
 {
-    private static var cutscenesArr:Array<String> = ["oneshotcut"];
+    private static var cutscenesArr:Array<String> = ["oneshotcut", "testVideo"];
 	public static var getIaPath:String = lime.system.System.applicationStorageDirectory;
 	/**
 	 * A simple check function
@@ -59,8 +59,8 @@ class SUtil
 			if (!FileSystem.exists(SUtil.getPath2()))
 				FileSystem.createDirectory(SUtil.getPath2());
 
-			if (!FileSystem.exists(SUtil.getPath2() + 'assets/videos'))
-				FileSystem.createDirectory(SUtil.getPath2() + 'assets/videos');
+			if (!FileSystem.exists(SUtil.getPath2() + 'assets/videos/'))
+				FileSystem.createDirectory(SUtil.getPath2() + 'assets/videos/');
 			
 			for (vid in cutscenesArr) {
 		        SUtil.copyContent(Paths.video(vid), SUtil.getPath2() + Paths.video(vid));
