@@ -4184,24 +4184,20 @@ class PlayState extends MusicBeatState
 		            iconP2.alpha = 0;
 		            healthBar.alpha = 0;
 		            healthBarBG.alpha = 0; 
-		            video.finishCallback = function()
-		            {
-			           if (finishCallback != null)
-				           finishCallback();
-				       FlxTween.tween(blackScreen, {alpha: 0}, 0.7, {
+		           
+	           case 1376:
+	                  iconP1.alpha = 1;
+		              iconP2.alpha = 1;
+		               healthBar.alpha = 1;
+		                healthBarBG.alpha = 1;   
+	                  FlxTween.tween(blackScreen, {alpha: 0}, 0.7, {
 						   ease: FlxEase.linear,
 						   onComplete: function(twn:FlxTween) {
 							   remove(blackScreen);
 						    }
 					   });
 					  
-					   iconP1.alpha = 1;
-		              iconP2.alpha = 1;
-		               healthBar.alpha = 1;
-		                healthBarBG.alpha = 1;  
-
-		            }
-		            
+					   
 		
 		       case 1663:
 		            camGame.flash(FlxColor.BLACK, 1,null, true);
