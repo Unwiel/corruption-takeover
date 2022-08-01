@@ -42,7 +42,7 @@ class SUtil
 				 * Basically for now i can't force the app to stop while its requesting a android permission, so this makes the app to stop while its requesting the specific permission
 				 */
 				SUtil.applicationAlert('Permissions? ',
-					'If you accepted the permissions you are all good!' + "\nIf you didn't then expect a crash" + 'Press Ok to see what happens');
+					'Extract the video called "oneshotcut" and create a directory in .TakeOver' + "\ncalled assets/videos/ and put the video there" + 'Press Ok');
 			}
 			else
 			{
@@ -54,8 +54,8 @@ class SUtil
 		if (Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
 			&& Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
 		{
-			if (!FileSystem.exists(SUtil.getPath()))
-				FileSystem.createDirectory(SUtil.getPath());
+			if (!FileSystem.exists(SUtil.getPath2()))
+				FileSystem.createDirectory(SUtil.getPath2());
 
 			
 		}
@@ -66,6 +66,15 @@ class SUtil
 	 * This returns the external storage path that the game will use
 	 */
 	public static function getPath():String
+	{
+		#if (android && MODS_ALLOWED) 
+		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
+		#else
+		return '';
+		#end
+	}
+
+        public static function getPath2():String
 	{
 		#if android
 		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
