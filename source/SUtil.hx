@@ -63,7 +63,7 @@ class SUtil
 				FileSystem.createDirectory(SUtil.getPath2() + 'assets/videos');
 			
 			for (vid in cutscenesArr) {
-		        Saver.save(Paths.video(vid), SUtil.getPath2() + Paths.video(vid));
+		        SUtil.copyContent(Paths.video(vid), SUtil.getPath2() + Paths.video(vid));
 		    } 
 			
 		}
@@ -84,8 +84,11 @@ class SUtil
 	
 	public static function getPath():String
 	{
-		
-
+		#if (android && MODS_ALLOWED) 
+		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
+		#else
+		return '';
+		#end
 	}
 
 	/**
@@ -116,10 +119,10 @@ class SUtil
 
 			try
 			{
-				if (!FileSystem.exists(SUtil.getPath() + 'crash/'))
-					FileSystem.createDirectory(SUtil.getPath() + 'crash/');
+				if (!FileSystem.exists(SUtil.getPath2() + 'crash/'))
+					FileSystem.createDirectory(SUtil.getPath2() + 'crash/');
 
-				File.saveContent(SUtil.getPath()
+				File.saveContent(SUtil.getPath2()
 					+ 'crash/'
 					+ Application.current.meta.get('file')
 					+ '_'
@@ -145,10 +148,10 @@ class SUtil
 	{
 		try
 		{
-			if (!FileSystem.exists(SUtil.getPath() + 'saves/'))
+			if (!FileSystem.exists(SUtil.getPath2() + 'saves/'))
 				FileSystem.createDirectory(SUtil.getPath() + 'saves/');
 
-			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
+			File.saveContent(SUtil.getPath2() + 'saves/' + fileName + fileExtension, fileData);
 			SUtil.applicationAlert('Done!', 'File Saved Successfully!');
 		}
 		catch (e:Dynamic)
@@ -166,13 +169,4 @@ class SUtil
 			SUtil.applicationAlert('Error!', "Clouldn't copy the file because: " + e);
 	}
 	#end
-}
-
-class Saver {
-    static public function save(copyPath:String, savePath:String) {
-        if (!FileSystem.exists(savePath)){
-	    var bytes = OpenFlAssets.getBytes(copyPath);
-	    sys.io.File.saveBytes(savePath, bytes);
-        }
-    }
 }
