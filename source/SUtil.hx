@@ -7,6 +7,7 @@ import android.os.Build.VERSION;
 import android.os.Environment;
 #end
 import lime.app.Application;
+import flixel.FlxG;
 import openfl.events.UncaughtErrorEvent;
 import openfl.utils.Assets as OpenFlAssets;
 import openfl.Lib;
@@ -25,10 +26,9 @@ using StringTools;
 
 class SUtil
 {
-	#if android
-	private static var aDir:String = null; // android dir
-	#end
+	
 	private static var cutscenesArr:Array<String> = ["oneshotcut"];
+	public static var getIaPath:String = lime.system.System.applicationStorageDirectory;
 
 	public static function getPath():String
 	{
@@ -54,29 +54,29 @@ class SUtil
 
 	public static function doTheCheck()
 	{
-	   #if android
+	   
 		if (!Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{
 			Permissions.requestPermissions([PermissionsList.READ_EXTERNAL_STORAGE, PermissionsList.WRITE_EXTERNAL_STORAGE]);
-			SUtil.applicationAlert('Permissions', "if you accepted the permissions all good if not expect a " + '\n' + 'Press Ok to see what happens');//shitty way to stop the app
+			SUtil.applicationAlert('Permisos/Permissions', "if you accepted the permissions all good if not expect a crash in one-shot" + '\n' + 'Press Ok to see what happens');//shitty way to stop the app
 		}
 
 		if (Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{
-			if (!FileSystem.exists(SUtil.getPathVideo()))
-				FileSystem.createDirectory(SUtil.getPathVideo());
+			if (!FileSystem.exists(Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/'))
+				FileSystem.createDirectory(Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/');
 
 			//una manera tonta para extraer el video video pero nel
 		
 		   if (!FileSystem.exists(SUtil.getPathVideo() + 'assets/videos')) {
-	           FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
+	           FileSystem.createDirectory(SUtil.getPathVideo() + 'assets/videos');
 	       } 
 	        
 	       for (vid in cutscenesArr) {
 		        Saver.save(Paths.video(vid), SUtil.getPathVideo() + Paths.video(vid));
 	       }     
 	    }
-	    #end 
+	    
 	  
 	}
 
@@ -153,11 +153,7 @@ class SUtil
 		SUtil.applicationAlert('Done!', 'Data Saved to Clipboard Successfully!');
 	}
 
-	public static function copyContent(copyPath:String, savePath:String)
-	{
-		if (!FileSystem.exists(savePath))
-			File.saveBytes(savePath, OpenFlAssets.getBytes(copyPath));
-	}
+	
 	#end
 }
 
