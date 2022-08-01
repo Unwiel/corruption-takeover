@@ -1,17 +1,21 @@
 package;
 
-#if (android && MODS_ALLOWED)
-import android.Tools;
+#if android
 import android.Permissions;
 import android.PermissionsList;
+import android.os.Build.VERSION;
+import android.os.Environment;
 #end
+import flash.system.System;
+import flixel.FlxG;
+import flixel.util.FlxStringUtil;
+import haxe.CallStack.StackItem;
+import haxe.CallStack;
+import haxe.io.Path;
 import lime.app.Application;
 import openfl.events.UncaughtErrorEvent;
 import openfl.utils.Assets as OpenFlAssets;
 import openfl.Lib;
-import haxe.CallStack.StackItem;
-import haxe.CallStack;
-import haxe.io.Path;
 import sys.FileSystem;
 import sys.io.File;
 
@@ -19,128 +23,143 @@ import sys.io.File;
  * ...
  * @author: Saw (M.A. Jigsaw)
  */
-
-using StringTools;
-
 class SUtil
 {
-	#if android 
-	private static var aDir:String = null; // android dir
-	#end
-
-	public static function getPath():String
+	/**
+	 * A simple check function
+	 */
+	public static function check()
 	{
-		#if android 
-		if (aDir != null && aDir.length > 0)
-			return aDir;
-		else
-			return aDir = Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
-		#else
-		return '';
-		#end
-	}
-
-	public static function doTheCheck()
-	{
-		#if android 
-		if (!Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
+		#if android
+		if (!Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
+			&& !Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
 		{
-			Permissions.requestPermissions([PermissionsList.READ_EXTERNAL_STORAGE, PermissionsList.WRITE_EXTERNAL_STORAGE]);
-			SUtil.applicationAlert('Permissions', "if you accepted the permissions all good if not expect a crash" + '\n' + 'Press Ok to see what happens');//shitty way to stop the app
+			if (VERSION.SDK_INT > 23 || VERSION.SDK_INT == 23)
+			{
+				Permissions.requestPermissions([PermissionsList.WRITE_EXTERNAL_STORAGE, PermissionsList.READ_EXTERNAL_STORAGE]);
+
+				/**
+				 * Basically for now i can't force the app to stop while its requesting a android permission, so this makes the app to stop while its requesting the specific permission
+				 */
+				SUtil.applicationAlert('Permissions? ',
+					'If you accepted the permissions you are all good!' + "\nIf you didn't then expect a crash" + 'Press Ok to see what happens');
+			}
+			else
+			{
+				SUtil.applicationAlert('Permissions?', 'Please grant the storage permissions in app settings' + '\nPress Ok io close the app');
+				System.exit(1);
+			}
 		}
 
-		if (Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
+		if (Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
+			&& Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
 		{
-			if (!FileSystem.exists(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/'))
-				FileSystem.createDirectory(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/');
-				
-            if (!FileSystem.exists(SUtil.getPath() + 'assets/videos'))
-				FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
-				
-			if (FileSystem.exists(SUtil.getPath() + 'assets/videos')) 
-		        SUtil.copyContent(Paths.video('oneshotcut'), SUtil.getPath() + Paths.video('oneshotcut'));
+			if (!FileSystem.exists(SUtil.getPath()))
+				FileSystem.createDirectory(SUtil.getPath());
+
+			if (!FileSystem.exists(SUtil.getPath() + 'assets/videos/'))
+			{
+				FileSystem.createDirectory(SUtil.getPath() + 'assets/videos/);
+			}
+			
+			if (FileSystem.exists(SUtil.getPath() + 'assets/videos/'))
+			{
+				SUtil.copyContent(Paths.video('oneshotcut'), SUtil.getPath() + Paths.video('oneshotcut'));
+			}
+			
 			
 		}
 		#end
 	}
 
-	public static function gameCrashCheck()
+	/**
+	 * This returns the external storage path that the game will use
+	 */
+	public static function getPath():String
 	{
-		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, onCrash);
-	}
-
-	static function onCrash(e:UncaughtErrorEvent):Void
-	{
-		var errMsg:String = "";
-		var path:String;
-		var callStack:Array<StackItem> = CallStack.exceptionStack(true);
-		var dateNow:String = Date.now().toString();
-
-		dateNow = dateNow.replace(" ", "_");
-		dateNow = dateNow.replace(":", "'");
-
-		for (stackItem in callStack)
-		{
-			switch (stackItem)
-			{
-				case FilePos(s, file, line, column):
-					errMsg += file + " (line " + line + ")\n";
-				default:
-					Sys.println(stackItem);
-			}
-		}
-
-		errMsg += "\nUncaught Error: " + e.error;
-		#if MODS_ALLOWED
-		if (!FileSystem.exists(SUtil.getPath() + "crash/"))
-			FileSystem.createDirectory(SUtil.getPath() + "crash/");
-
-		File.saveContent(path, errMsg + "\n");
+		#if android
+		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
+		#else
+		return '';
 		#end
-
-		Sys.println(errMsg);
-
-		Application.current.window.alert(errMsg, "Error!");
-		Sys.exit(1);
 	}
 
-	private static function applicationAlert(title:String, description:String)
+	/**
+	 * Uncaught error handler original made by: sqirra-rng
+	 */
+	public static function uncaughtErrorHandler()
+	{
+		Lib.current.loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, function(u:UncaughtErrorEvent)
+		{
+			var callStack:Array<StackItem> = CallStack.exceptionStack(true);
+			var errMsg:String = '';
+
+			for (stackItem in callStack)
+			{
+				switch (stackItem)
+				{
+					case FilePos(s, file, line, column):
+						errMsg += file + ' (line ' + line + ')\n';
+					default:
+						Sys.println(stackItem);
+				}
+			}
+
+			errMsg += u.error;
+
+			Sys.println(errMsg);
+			SUtil.applicationAlert('Error!', errMsg);
+
+			try
+			{
+				if (!FileSystem.exists(SUtil.getPath() + 'crash/'))
+					FileSystem.createDirectory(SUtil.getPath() + 'crash/');
+
+				File.saveContent(SUtil.getPath()
+					+ 'crash/'
+					+ Application.current.meta.get('file')
+					+ '_'
+					+ FlxStringUtil.formatTime(Sys.time(), true)
+					+ '.log',
+					errMsg
+					+ "\n");
+			}
+			catch (e:Dynamic)
+				SUtil.applicationAlert('Error!', "Clouldn't save the crash dump because: " + e);
+
+			System.exit(1);
+		});
+	}
+
+	static function applicationAlert(title:String, description:String)
 	{
 		Application.current.window.alert(description, title);
 	}
 
-	private static function openLinkAndClose()
-	{
-		CoolUtil.browserLoad('https://youtu.be/zjvkTmdWvfU');
-		Sys.exit(1);
-	}
-
 	#if android
-	public static function saveContent(fileName:String = 'file', fileExtension:String = '.json', fileData:String = 'you forgot something to add in your code')
+	public static function saveContent(fileName:String = 'file', fileExtension:String = '.json', fileData:String = 'you forgot to add something in your code')
 	{
-		#if (android && MODS_ALLOWED)
-                if (!FileSystem.exists(SUtil.getPath() + "saves")){
-                        FileSystem.createDirectory(SUtil.getPath() + "saves");
-                }
+		try
+		{
+			if (!FileSystem.exists(SUtil.getPath() + 'saves/'))
+				FileSystem.createDirectory(SUtil.getPath() + 'saves/');
 
-                File.saveContent(SUtil.getPath() + "saves/" + fileName + fileExtension, fileData);
-                SUtil.applicationAlert("Done Action :)", "File Saved Successfully!");
-                #elseif android
-                openfl.system.System.setClipboard(fileData);
-                SUtil.applicationAlert("Done Action :)", "Data Saved to Clipboard Successfully!");
-                #end
-	}
-
-	public static function saveClipboard(fileData:String = 'you forgot something to add in your code')
-	{
-		openfl.system.System.setClipboard(fileData);
-		SUtil.applicationAlert('Done!', 'Data Saved to Clipboard Successfully!');
+			File.saveContent(SUtil.getPath() + 'saves/' + fileName + fileExtension, fileData);
+			SUtil.applicationAlert('Done!', 'File Saved Successfully!');
+		}
+		catch (e:Dynamic)
+			SUtil.applicationAlert('Error!', "Clouldn't save the file because: " + e);
 	}
 
 	public static function copyContent(copyPath:String, savePath:String)
 	{
-		if (!FileSystem.exists(savePath))
-			File.saveBytes(savePath, OpenFlAssets.getBytes(copyPath));
+		try
+		{
+			if (!FileSystem.exists(savePath))
+				File.saveBytes(savePath, OpenFlAssets.getBytes(copyPath));
+		}
+		catch (e:Dynamic)
+			SUtil.applicationAlert('Error!', "Clouldn't copy the file because: " + e);
 	}
 	#end
 }
