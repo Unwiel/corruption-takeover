@@ -572,6 +572,8 @@ class PlayState extends MusicBeatState
 				isCorrupt = true;
 				
 				GameOverSubstate.characterName = 'corruptbfDEATH';
+				GameOverSubstate.loopSoundName = 'Host_Death';
+				GameOverSubstate.endSoundName = 'Host_Retry'; 
 				
 			case 'picod3':
 			   var bg:FlxSprite = new FlxSprite(-100, -290);
@@ -595,6 +597,12 @@ class PlayState extends MusicBeatState
 				bopright.antialiasing = ClientPrefs.globalAntialiasing; 
 			   
 			    isCorrupt = true;
+			   
+			    overlaypico = new FlxSprite();
+				overlaypico.loadGraphic(Paths.image('winter/corruptvignette1'));
+				overlaypico.alpha = 0;
+				add(overlaypico);
+				overlaypico.cameras = [camOther]; 
 			
 			    GameOverSubstate.characterName = 'corruptbfDEATH';
 			    
@@ -4160,6 +4168,52 @@ class PlayState extends MusicBeatState
 				
 			}
 		}
+		
+		if (SONG.song.toLowerCase() == 'one-shot')
+		{
+			switch (curStep)
+			{
+			   case 1119:
+                    var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
+					add(blackScreen);
+					blackScreen.cameras = [camHUD];
+			        var video:VideoSprite = new VideoSprite();
+			        video.cameras = [camHUD];
+			        iconP1.alpha = 0;
+		            iconP2.alpha = 0;
+		            healthBar.alpha = 0;
+		            healthBarBG.alpha = 0; 
+		            video.finishCallback = function()
+		            {
+			           if (finishCallback != null)
+				           finishCallback();
+				       FlxTween.tween(blackScreen, {alpha: 0}, 0.7, {
+						   ease: FlxEase.linear,
+						   onComplete: function(twn:FlxTween) {
+							   remove(blackScreen);
+						    }
+					   });
+					  
+					   iconP1.alpha = 1;
+		              iconP2.alpha = 1;
+		               healthBar.alpha = 1;
+		                healthBarBG.alpha = 1;  
+
+		            }
+		            video.playVideo(Paths.videos('oneshotcut'), false);
+		
+		       case 1663:
+		            camGame.flash(FlxColor.BLACK, 1,null, true);
+				   camHUD.visible = false;
+				  overlaypico.alpha = 1; 
+				   FlxTween.tween(camGame, {zoom: 1.1}, 1, {
+						onComplete: function(twn:FlxTween)
+						{
+							defaultCamZoom = 1.1;
+						}
+					});
+			}
+		} 
 
 		if(curStep == lastStepHit) {
 			return;
