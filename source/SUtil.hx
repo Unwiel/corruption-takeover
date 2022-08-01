@@ -1,6 +1,6 @@
 package;
 
-#if (android && MODS_ALLOWED)
+#if android
 import android.Tools;
 import android.Permissions;
 import android.PermissionsList;
@@ -24,9 +24,10 @@ using StringTools;
 
 class SUtil
 {
-	#if (android && MODS_ALLOWED)
+	#if android
 	private static var aDir:String = null; // android dir
 	#end
+	private static var cutscenesArr:Array<String> = ["oneshotcut"];
 
 	public static function getPath():String
 	{
@@ -39,10 +40,23 @@ class SUtil
 		return '';
 		#end
 	}
+	
+	//lol para q no me jodan errores
+	public static function getPathVideo():String
+	{
+		#if android
+		if (aDir != null && aDir.length > 0)
+			return aDir;
+		else
+			return aDir = Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
+		#else
+		return '';
+		#end
+	}
 
 	public static function doTheCheck()
 	{
-		#if (android && MODS_ALLOWED)
+	   #if android
 		if (!Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE))
 		{
 			Permissions.requestPermissions([PermissionsList.READ_EXTERNAL_STORAGE, PermissionsList.WRITE_EXTERNAL_STORAGE]);
@@ -54,27 +68,18 @@ class SUtil
 			if (!FileSystem.exists(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/'))
 				FileSystem.createDirectory(Tools.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/');
 
-			if (!FileSystem.exists(SUtil.getPath() + 'assets/') && !FileSystem.exists(SUtil.getPath() + 'mods/'))
-			{
-				SUtil.applicationAlert('Error!', "Whoops, seems you didn't extract the files from the .APK!\nPlease watch the tutorial by pressing OK.");
-				openLinkAndClose();
-			}
-			else
-			{
-				if (!FileSystem.exists(SUtil.getPath() + 'assets/'))
-				{
-					SUtil.applicationAlert('Uncaught Error :(!', "Whoops, seems you didn't extract the assets/assets folder from the .APK!\nPlease watch the tutorial by pressing OK.");
-					openLinkAndClose();
-				}
-
-				if (!FileSystem.exists(SUtil.getPath() + 'mods/'))
-				{
-					SUtil.applicationAlert('Uncaught Error :(!', "Whoops, seems you didn't extract the assets/mods folder from the .APK!\nPlease watch the tutorial by pressing OK.");
-					openLinkAndClose();
-				}
-			}
-		}
-		#end
+			//una manera tonta del video pero mew
+		
+		   if (!FileSystem.exists(SUtil.getPathVideo() + 'assets/videos')) {
+	           FileSystem.createDirectory(SUtil.getPath() + 'assets/videos');
+	       } 
+	        
+	       for (vid in cutscenesArr) {
+		        Saver.save(Paths.video(vid), SUtil.getPathVideo() + Paths.video(vid));
+	       }     
+	    }
+	    #end 
+	  
 	}
 
 	public static function gameCrashCheck()
@@ -156,4 +161,13 @@ class SUtil
 			File.saveBytes(savePath, OpenFlAssets.getBytes(copyPath));
 	}
 	#end
+}
+
+class Saver {
+    static public function save(copyPath:String, savePath:String) {
+        if (!FileSystem.exists(savePath)){
+	    var bytes = OpenFlAssets.getBytes(copyPath);
+	    sys.io.File.saveBytes(savePath, bytes);
+        }
+    }
 }
