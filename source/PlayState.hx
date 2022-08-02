@@ -1888,7 +1888,7 @@ class PlayState extends MusicBeatState
 			}
 			
 			
-			video.bitmap.pause();
+			
 
 			if (!startTimer.finished)
 				startTimer.active = false;
@@ -1931,7 +1931,7 @@ class PlayState extends MusicBeatState
 				resyncVocals();
 			}
 		
-			video.bitmap.resume();
+			
 
 			if (!startTimer.finished)
 				startTimer.active = true;
