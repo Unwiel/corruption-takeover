@@ -288,7 +288,7 @@ class PlayState extends MusicBeatState
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
 	
-	public static var video:VideoSprite;
+	
 
 	override public function create()
 	{
