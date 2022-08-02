@@ -4184,7 +4184,7 @@ class PlayState extends MusicBeatState
 			{
 			   case 1119:
                     
-			        var video = new WebmPlayerS('assets/videos/oneshotcut');
+			        var video = new WebmPlayerS('videos/oneshotcut');
 					video.setGraphicSize(FlxG.width);
 					video.updateHitbox();
 					video.cameras = [camHUD];
