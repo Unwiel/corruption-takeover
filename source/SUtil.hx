@@ -67,21 +67,14 @@ class SUtil
 	 */
 	public static function getPath():String
 	{
-		#if (android && MODS_ALLOWED) 
-		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
-		#else
-		return '';
-		#end
-	}
-
-        public static function getPath2():String
-	{
 		#if android
 		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
 		#else
 		return '';
 		#end
 	}
+
+        
 
 	/**
 	 * Uncaught error handler original made by: sqirra-rng
