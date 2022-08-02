@@ -54,8 +54,8 @@ class SUtil
 		if (Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
 			&& Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
 		{
-			if (!FileSystem.exists(SUtil.getPath2()))
-				FileSystem.createDirectory(SUtil.getPath2());
+			if (!FileSystem.exists(SUtil.getPath()))
+				FileSystem.createDirectory(SUtil.getPath());
 
 			
 		}
