@@ -605,8 +605,9 @@ class PlayState extends MusicBeatState
 				add(overlaypico);
 				overlaypico.cameras = [camOther];
 				
-				video = new VideoSprite();
+				video = new VideoSprite(0, 0);
 			    video.cameras = [camHUD];
+			    video.visible = false;
 			    add(video);
 			
 			    GameOverSubstate.characterName = 'corruptbfDEATH';
@@ -4180,8 +4181,8 @@ class PlayState extends MusicBeatState
 			{
 			   case 1119:
                     
-			        
-			        video.playVideo(SUtil.getPath2 + Paths.video('oneshotcut'), false);
+			        video.visible = true;
+			        video.playVideo(Paths.video("oneshotcut"), false);
 
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
