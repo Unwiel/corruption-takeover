@@ -4184,12 +4184,17 @@ class PlayState extends MusicBeatState
 			{
 			   case 1119:
                     
-			        video = new VideoSprite(0, 0);
-			        video.antialiasing = ClientPrefs.globalAntialiasing;
-			        video.playVideo(Paths.video('oneshotcut'), false);
-			        video.cameras = [camHUD];
+			        var video = new WebmPlayerS('assets/videos/oneshotcut');
+					video.setGraphicSize(FlxG.width);
+					video.updateHitbox();
+					video.cameras = [camHUD];
+					add(video);
 
-			        add(video);
+					video.endcallback = () -> {
+						remove(video);
+					}
+
+					video.play();
 
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
