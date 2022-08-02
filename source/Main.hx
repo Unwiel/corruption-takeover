@@ -85,7 +85,7 @@ class Main extends Sprite
 		SUtil.check();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
-                var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";
+                var ourSource:String = "assets/videos/DO NOT DELETE OR GAME WILL CRASH/dontDelete.webm";
 
                 #if web
                 var str1:String = "HTML CRAP";
