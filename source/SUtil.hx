@@ -128,7 +128,7 @@ class SUtil
 		Application.current.window.alert(description, title);
 	}
 
-	#if (android && MODS_ALLOWED) 
+	#if android 
 	public static function saveContent(fileName:String = 'file', fileExtension:String = '.json', fileData:String = 'you forgot to add something in your code')
 	{
 		try
