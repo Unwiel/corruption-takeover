@@ -121,6 +121,7 @@
         <haxelib name="extension-webview" if="android"/>
         <haxelib name="extension-androidtools" if="android"/>
         <haxelib name="extension-webm"/>
+        <haxelib name="actuate"/>
     
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
