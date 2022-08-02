@@ -147,7 +147,7 @@ class Paths
 			return file;
 		}
 		#end
-		return SUtil.getPath2() + 'assets/videos/$key.$VIDEO_EXT';
+		return SUtil.getPath() + 'assets/videos/$key.$VIDEO_EXT';
 	}
 
 	static public function sound(key:String, ?library:String):Dynamic
@@ -380,7 +380,7 @@ class Paths
 				return fileToCheck;
 			}
 		}
-		return SUtil.getPath() + 'mods/' + key;
+		return #if MODS_ALLOWED SUtil.getPath() #end + 'mods/' + key;
 	}
 
 	static public function getModDirectories():Array<String> {
