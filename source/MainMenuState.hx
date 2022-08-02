@@ -242,14 +242,7 @@ class MainMenuState extends MusicBeatState
 			MusicBeatState.switchState(new MasterEditorMenu());
 		}
 
-		menuItems.forEach(function(spr:FlxSprite)
-		{
-			if (spr.animation.curAnim.name == 'selected')
-				FlxTween.tween(spr, {x: 165}, 0.15);
-
-			if (spr.animation.curAnim.name == 'idle')
-				FlxTween.tween(spr, {x: 100}, 0.15);
-		});
+		
 
 		super.update(elapsed);
 	}
