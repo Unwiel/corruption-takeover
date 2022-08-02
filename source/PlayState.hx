@@ -273,7 +273,7 @@ class PlayState extends MusicBeatState
 	var keysPressed:Array<Bool> = [];
 	var boyfriendIdleTime:Float = 0.0;
 	var boyfriendIdled:Bool = false;
-	var video:VideoSprite;
+	
 
 	// Lua shit
 	public static var instance:PlayState;
@@ -287,6 +287,8 @@ class PlayState extends MusicBeatState
 	
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
+	
+	public static var video:VideoSprite;
 
 	override public function create()
 	{
@@ -605,11 +607,7 @@ class PlayState extends MusicBeatState
 				add(overlaypico);
 				overlaypico.cameras = [camOther];
 				
-				video = new VideoSprite(0, 0);
-			    video.cameras = [camHUD];
-			    video.visible = false;
-			    add(video);
-			
+				
 			    GameOverSubstate.characterName = 'corruptbfDEATH';
 			    
 				GameOverSubstate.loopSoundName = 'Host_Death';
@@ -1888,6 +1886,9 @@ class PlayState extends MusicBeatState
 				FlxG.sound.music.pause();
 				vocals.pause();
 			}
+			
+			
+			video.bitmap.pause();
 
 			if (!startTimer.finished)
 				startTimer.active = false;
@@ -1929,6 +1930,8 @@ class PlayState extends MusicBeatState
 			{
 				resyncVocals();
 			}
+		
+			video.bitmap.resume();
 
 			if (!startTimer.finished)
 				startTimer.active = true;
@@ -4181,8 +4184,12 @@ class PlayState extends MusicBeatState
 			{
 			   case 1119:
                     
-			        video.visible = true;
-			        video.playVideo(Paths.video("oneshotcut"), false);
+			        video = new VideoSprite(0, 0);
+			        video.antialiasing = ClientPrefs.globalAntialiasing;
+			        video.playVideo(Paths.video('oneshotcut'), false);
+			        video.cameras = [camHUD];
+
+			        add(video);
 
 			        iconP1.alpha = 0;
 		            iconP2.alpha = 0;
@@ -4212,10 +4219,10 @@ class PlayState extends MusicBeatState
 		            camGame.flash(FlxColor.BLACK, 1,null, true);
 				   camHUD.visible = false;
 				  overlaypico.alpha = 1; 
-				   FlxTween.tween(camGame, {zoom: 1.25}, 0.1, {
+				   FlxTween.tween(camGame, {zoom: 1.4}, 0.1, {
 						onComplete: function(twn:FlxTween)
 						{
-							defaultCamZoom = 1.25;
+							defaultCamZoom = 1.4;
 						}
 					});
 			}
