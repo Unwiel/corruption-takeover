@@ -1,6 +1,6 @@
 package;
 
-#if android
+#if (android && MODS_ALLOWED) 
 import android.Permissions;
 import android.PermissionsList;
 import android.os.Build.VERSION;
@@ -30,7 +30,7 @@ class SUtil
 	 */
 	public static function check()
 	{
-		#if android
+		#if (android && MODS_ALLOWED) 
 		if (!Permissions.getGrantedPermissions().contains(PermissionsList.WRITE_EXTERNAL_STORAGE)
 			&& !Permissions.getGrantedPermissions().contains(PermissionsList.READ_EXTERNAL_STORAGE))
 		{
@@ -67,7 +67,7 @@ class SUtil
 	 */
 	public static function getPath():String
 	{
-		#if android
+		#if (android && MODS_ALLOWED) 
 		return Environment.getExternalStorageDirectory() + '/' + '.' + Application.current.meta.get('file') + '/';
 		#else
 		return '';
@@ -128,7 +128,7 @@ class SUtil
 		Application.current.window.alert(description, title);
 	}
 
-	#if android
+	#if (android && MODS_ALLOWED) 
 	public static function saveContent(fileName:String = 'file', fileExtension:String = '.json', fileData:String = 'you forgot to add something in your code')
 	{
 		try
