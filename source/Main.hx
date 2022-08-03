@@ -88,16 +88,8 @@ class Main extends Sprite
                 var ourSource:String = "assets/videos/DO NOT DELETE OR GAME WILL CRASH/dontDelete.webm";
 
                 
-                #if web
-                var str1:String = "HTML CRAP";
-                var vHandler = new VideoHandler();
-                vHandler.init1();
-                vHandler.video.name = str1;
-                addChild(vHandler.video);
-                vHandler.init2();
-                GlobalVideo.setVid(vHandler);
-                vHandler.source(ourSource);
-                #elseif sys 
+                
+                #if sys 
                 var str1:String = "WEBM SHIT"; 
                 var webmHandle = new WebmHandler();
                 webmHandle.source(ourSource);
