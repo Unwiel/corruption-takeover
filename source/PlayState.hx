@@ -288,6 +288,8 @@ class PlayState extends MusicBeatState
 	// Less laggy controls
 	private var keysArray:Array<Dynamic>;
 	
+	var video:WebmPlayerS;
+	
 	
 
 	override public function create()
@@ -606,6 +608,18 @@ class PlayState extends MusicBeatState
 				overlaypico.alpha = 0;
 				add(overlaypico);
 				overlaypico.cameras = [camOther];
+				
+				    video = new WebmPlayerS("assets/videos/oneshotcut.webm");
+					video.setGraphicSize(FlxG.width);
+					//video.updateHitbox();
+					video.cameras = [camHUD];
+					add(video);
+					
+					video.visible = false;
+				
+				   video.endcallback = () -> {
+						remove(video);
+					}
 				
 				
 			    GameOverSubstate.characterName = 'corruptbfDEATH';
@@ -1887,7 +1901,7 @@ class PlayState extends MusicBeatState
 				vocals.pause();
 			}
 			
-			
+			video.pause();
 			
 
 			if (!startTimer.finished)
@@ -1930,7 +1944,7 @@ class PlayState extends MusicBeatState
 			{
 				resyncVocals();
 			}
-		
+		    video.resume();
 			
 
 			if (!startTimer.finished)
@@ -4182,17 +4196,11 @@ class PlayState extends MusicBeatState
 		{
 			switch (curStep)
 			{
-			   case 1118:
+			   case 1119:
                     
-			        var video = new WebmPlayerS("assets/videos/oneshotcut.webm");
-					video.setGraphicSize(FlxG.width);
-					//video.updateHitbox();
-					video.cameras = [camHUD];
-					add(video);
-
-					video.endcallback = () -> {
-						remove(video);
-					}
+			        
+                    video.visible = true;
+					
 
 					video.play();
 
@@ -4203,15 +4211,13 @@ class PlayState extends MusicBeatState
 		            healthBarBG.alpha = 0; 
 		           
 	           case 1378:
-	                  var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.cameras = [camHUD];
+
 	                  iconP1.alpha = 1;
 		              iconP2.alpha = 1;
 		               healthBar.alpha = 1;
 		                healthBarBG.alpha = 1;  
 		                scoreTxt.visible = true;
-	                  FlxTween.tween(blackScreen, {alpha: 0}, 1, {
+	                  FlxTween.tween(video, {alpha: 0}, 1, {
 						   ease: FlxEase.linear,
 						   onComplete: function(twn:FlxTween) {
 							   remove(blackScreen);
