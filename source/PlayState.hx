@@ -4220,7 +4220,7 @@ class PlayState extends MusicBeatState
 	                  FlxTween.tween(video, {alpha: 0}, 1, {
 						   ease: FlxEase.linear,
 						   onComplete: function(twn:FlxTween) {
-							   remove(blackScreen);
+							   
 						    }
 					   });
 					  
