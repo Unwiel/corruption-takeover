@@ -89,15 +89,7 @@ class Main extends Sprite
 
                 
                 
-                #if sys 
-                var str1:String = "WEBM SHIT"; 
-                var webmHandle = new WebmHandler();
-                webmHandle.source(ourSource);
-                webmHandle.makePlayer();
-                webmHandle.webm.name = str1;
-                addChild(webmHandle.webm);
-                GlobalVideo.setWebm(webmHandle);
-                #end
+                
 
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
