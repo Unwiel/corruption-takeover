@@ -4182,11 +4182,11 @@ class PlayState extends MusicBeatState
 		{
 			switch (curStep)
 			{
-			   case 1119:
+			   case 1118:
                     
-			        var video = new WebmPlayerS('assets/videos/oneshotcut.webm');
+			        var video = new WebmPlayerS("assets/videos/oneshotcut.webm");
 					video.setGraphicSize(FlxG.width);
-					video.updateHitbox();
+					//video.updateHitbox();
 					video.cameras = [camHUD];
 					add(video);
 
@@ -4202,7 +4202,7 @@ class PlayState extends MusicBeatState
 		            healthBar.alpha = 0;
 		            healthBarBG.alpha = 0; 
 		           
-	           case 1376:
+	           case 1378:
 	                  var blackScreen:FlxSprite = new FlxSprite().makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 					add(blackScreen);
 					blackScreen.cameras = [camHUD];
