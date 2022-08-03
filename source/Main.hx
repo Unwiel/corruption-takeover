@@ -3,7 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
-import webm.WebmPlayer;
+
 import openfl.Assets;
 import openfl.Lib;
 import openfl.display.FPS;
@@ -61,7 +61,6 @@ class Main extends Sprite
 	}
 
         
-        public static var webmHandler:WebmHandler;
 
 	private function setupGame():Void
 	{
