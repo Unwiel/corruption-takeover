@@ -139,7 +139,7 @@ class StoryMenuState extends MusicBeatState
 		leftArrow.animation.addByPrefix('press', "arrow push left");
 		leftArrow.animation.play('idle');
 		leftArrow.antialiasing = ClientPrefs.globalAntialiasing;
-		difficultySelectors.add(leftArrow);
+		//difficultySelectors.add(leftArrow);
 
 		CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
 		if(lastDifficultyName == '')
@@ -159,7 +159,7 @@ class StoryMenuState extends MusicBeatState
 		rightArrow.animation.addByPrefix('idle', 'arrow right');
 		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
 		rightArrow.animation.play('idle');
-		rightArrow.antialiasing = ClientPrefs.globalAntialiasing;
+		//rightArrow.antialiasing = ClientPrefs.globalAntialiasing;
 		difficultySelectors.add(rightArrow);
 
 		add(bgYellow);
@@ -182,7 +182,7 @@ class StoryMenuState extends MusicBeatState
 		changeWeek();
 
                 #if android
-		addVirtualPad(FULL, A_B_X_Y);
+		addVirtualPad(UP_DOWN, A_B_X_Y);
                 #end
 
 		super.create();
@@ -196,6 +196,9 @@ class StoryMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		if (leftArrow.alpha != 0) leftArrow.alpha = 0;
+		if (rightArrow.alpha != 0) rightArrow.alpha = 0;
+
 		// scoreText.setFormat('VCR OSD Mono', 32);
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, CoolUtil.boundTo(elapsed * 30, 0, 1)));
 		if(Math.abs(intendedScore - lerpScore) < 10) lerpScore = intendedScore;
@@ -232,11 +235,7 @@ class StoryMenuState extends MusicBeatState
 			else
 				leftArrow.animation.play('idle');
 
-			if (controls.UI_RIGHT_P)
-				changeDifficulty(1);
-			else if (controls.UI_LEFT_P)
-				changeDifficulty(-1);
-			else if (upP || downP)
+			if (upP || downP)
 				changeDifficulty();
 
 			if(FlxG.keys.justPressed.CONTROL#if android || _virtualpad.buttonX.justPressed #end)
@@ -254,20 +253,7 @@ class StoryMenuState extends MusicBeatState
 			{
 				selectWeek();
 			}
-			
-			if (curWeek == 0)
-		    {
-		       FlxG.sound.playMusic(Paths.music('takeover_menu_lem'), 0);
-		    }  
-		
-		   if (curWeek == 1)
-		   {
-		        FlxG.sound.music.stop();
-		        FlxG.sound.playMusic(Paths.music('takeover_menu_philly'), 0); 
-		   }
 		}
-		
-		
 
 		if (controls.BACK && !movedBack && !selectedWeek)
 		{
@@ -321,9 +307,6 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.campaignScore = 0;
 			PlayState.campaignMisses = 0;
-			
-			
-			
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
 				LoadingState.loadAndSwitchState(new PlayState(), true);
@@ -345,7 +328,7 @@ class StoryMenuState extends MusicBeatState
 		if (curDifficulty >= CoolUtil.difficulties.length)
 			curDifficulty = 0;
 
-		var image:Dynamic = Paths.image('menudifficulties/' + Paths.formatToSongPath(CoolUtil.difficulties[curDifficulty]));
+		var image:Dynamic = Paths.image('menudifficulties/hard');
 		var newImagePath:String = '';
 		if(Std.isOfType(image, FlxGraphic))
 		{
@@ -388,6 +371,19 @@ class StoryMenuState extends MusicBeatState
 			curWeek = 0;
 		if (curWeek < 0)
 			curWeek = WeekData.weeksList.length - 1;
+			
+		    if (curWeek == 0)
+		    {
+		       FlxG.sound.music.stop(); 
+		       FlxG.sound.playMusic(Paths.music('takeover_menu_lem'), 1);
+		    }  
+		
+		   if (curWeek == 1)
+		   {
+		        FlxG.sound.music.stop();
+		        FlxG.sound.playMusic(Paths.music('takeover_menu_philly'), 1); 
+		   }
+		   
 
 		var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[curWeek]);
 		WeekData.setDirectoryFromWeek(leWeek);
@@ -397,8 +393,6 @@ class StoryMenuState extends MusicBeatState
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
 
 		var bullShit:Int = 0;
-		
-		
 
 		for (item in grpWeekText.members)
 		{
@@ -417,6 +411,11 @@ class StoryMenuState extends MusicBeatState
 		} else {
 			bgSprite.loadGraphic(Paths.image('menubackgrounds/menu_' + assetName));
 		}
+
+		var bgSprite:FlxSprite = new FlxSprite(0, -20);
+		bgSprite.loadGraphic(Paths.image('storymenu/borders'));
+		bgSprite.antialiasing = ClientPrefs.globalAntialiasing;
+		add(bgSprite);
 		
 		PlayState.storyWeek = curWeek;
 
