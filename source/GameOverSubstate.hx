@@ -146,7 +146,6 @@ class GameOverSubstate extends MusicBeatSubstate
 	function coolStartDeath(?volume:Float = 1):Void
 	{
 		FlxG.sound.playMusic(Paths.music(loopSoundName), volume);
-                FlxG.sound.play(Paths.soundRandom('lmo_line_', 1, 7));
 	}
 
 	function endBullshit():Void

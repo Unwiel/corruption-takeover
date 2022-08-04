@@ -1,15 +1,18 @@
+#if android
 import flixel.text.FlxText;
 // import flixel.FlxState;
 import flixel.FlxG;
 // import flixel.FlxSubState;
-import flixel.FlxBasic;
 
 import extension.webview.WebView;
 
 using StringTools;
+#end
+import flixel.FlxBasic;
 
 class FlxVideo extends FlxBasic
 {
+	#if android
 	public static var androidPath:String = 'file:///android_asset/';
 
 	public static var source1:String = 'assets/videos/';
@@ -64,4 +67,5 @@ class FlxVideo extends FlxBasic
 		if (url == 'http://exitme/') if(finishCallback != null) finishCallback(); // drity hack lol
 		trace("WebView is about to open: "+url);
 	}
+	#end
 }

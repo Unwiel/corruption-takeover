@@ -34,9 +34,9 @@ class MainMenuState extends MusicBeatState
 	
 	var optionShit:Array<String> = [
 		'STORYMODE',
-		'freeplay',
+		'FREEPLAY',
 		'EXTRAS',
-		'options'
+		'OPTIONS'
 	];
 
 	var magenta:FlxSprite;
@@ -224,11 +224,11 @@ class MainMenuState extends MusicBeatState
 							{
 								case 'STORYMODE':
 									MusicBeatState.switchState(new StoryMenuState());
-								case 'freeplay':
+								case 'FREEPLAY':
 									MusicBeatState.switchState(new FreeplayState());
 								case 'EXTRAS':
 									MusicBeatState.switchState(new CreditsState());
-								case 'options':
+								case 'OPTIONS':
 									MusicBeatState.switchState(new options.OptionsState());
 							}
 						});
@@ -242,7 +242,14 @@ class MainMenuState extends MusicBeatState
 			MusicBeatState.switchState(new MasterEditorMenu());
 		}
 
-		
+		menuItems.forEach(function(spr:FlxSprite)
+		{
+			if (spr.animation.curAnim.name == 'selected')
+				FlxTween.tween(spr, {x: 165}, 0.15);
+
+			if (spr.animation.curAnim.name == 'idle')
+				FlxTween.tween(spr, {x: 100}, 0.15);
+		});
 
 		super.update(elapsed);
 	}

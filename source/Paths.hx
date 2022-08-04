@@ -21,7 +21,7 @@ class Paths
 {
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 	
-	inline public static var VIDEO_EXT = ".mp4";
+	inline public static var VIDEO_EXT = "";
 
 	#if MODS_ALLOWED
 	#if (haxe >= "4.0.0")
@@ -147,7 +147,7 @@ class Paths
 			return file;
 		}
 		#end
-		return SUtil.getPath() + 'assets/videos/$key.$VIDEO_EXT';
+		return 'assets/videos/$key';
 	}
 
 	static public function sound(key:String, ?library:String):Dynamic
@@ -273,7 +273,7 @@ class Paths
 			return file;
 		}
 		#end
-		return 'assets/fonts/$key';
+		return SUtil.getPath() + 'assets/fonts/$key';
 	}
 
 	inline static public function fileExists(key:String, type:AssetType, ?ignoreMods:Bool = false, ?library:String)
@@ -380,7 +380,7 @@ class Paths
 				return fileToCheck;
 			}
 		}
-		return #if MODS_ALLOWED SUtil.getPath() #end + 'mods/' + key;
+		return SUtil.getPath() + 'mods/' + key;
 	}
 
 	static public function getModDirectories():Array<String> {

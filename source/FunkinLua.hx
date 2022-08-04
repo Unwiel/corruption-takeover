@@ -893,18 +893,6 @@ class FunkinLua {
 				}
 			}
 		});
-		Lua_helper.add_callback(lua, "getMidpointX", function(variable:String) {
-			var obj:FlxObject = getObjectDirectly(variable);
-			if(obj != null) return obj.getMidpoint().x;
-
-			return 0;
-		});
-		Lua_helper.add_callback(lua, "getMidpointY", function(variable:String) {
-			var obj:FlxObject = getObjectDirectly(variable);
-			if(obj != null) return obj.getMidpoint().y;
-
-			return 0;
-		});
 		Lua_helper.add_callback(lua, "objectPlayAnimation", function(obj:String, name:String, forced:Bool = false) {
 			if(PlayState.instance.modchartSprites.exists(obj)) {
 				PlayState.instance.modchartSprites.get(obj).animation.play(name, forced);
@@ -1610,19 +1598,6 @@ class FunkinLua {
 		}
 		pee.destroy();
 		PlayState.instance.modchartTexts.remove(tag);
-	}
-	
-	function getObjectDirectly(objectName:String, ?checkForTextsToo:Bool = true):Dynamic
-	{
-		var coverMeInPiss:Dynamic = null;
-		if(PlayState.instance.modchartSprites.exists(objectName)) {
-			coverMeInPiss = PlayState.instance.modchartSprites.get(objectName);
-		} else if(checkForTextsToo && PlayState.instance.modchartTexts.exists(objectName)) {
-			coverMeInPiss = PlayState.instance.modchartTexts.get(objectName);
-		} else {
-			coverMeInPiss = Reflect.getProperty(getInstance(), objectName);
-		}
-		return coverMeInPiss;
 	}
 
 	function resetSpriteTag(tag:String) {
