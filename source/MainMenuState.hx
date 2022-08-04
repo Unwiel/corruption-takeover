@@ -34,9 +34,9 @@ class MainMenuState extends MusicBeatState
 	
 	var optionShit:Array<String> = [
 		'STORYMODE',
-		'FREEPLAY',
+		'freeplay',
 		'EXTRAS',
-		'OPTIONS'
+		'options'
 	];
 
 	var magenta:FlxSprite;
@@ -229,11 +229,11 @@ class MainMenuState extends MusicBeatState
 							{
 								case 'STORYMODE':
 									MusicBeatState.switchState(new StoryMenuState());
-								case 'FREEPLAY':
+								case 'freeplay':
 									MusicBeatState.switchState(new FreeplaySelector());
 								case 'EXTRAS':
 									MusicBeatState.switchState(new ExtrasState());
-								case 'OPTIONS':
+								case 'options':
 									MusicBeatState.switchState(new options.OptionsState());
 							}
 						});
