@@ -125,7 +125,12 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Corrupt Psych Engine v0.5.1t", 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Corrupt Psych Engine v0.5.1t", 12);
+		versionShit.scrollFactor.set();
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(versionShit);
+
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "Friday Night Funkin' v0.2.7", 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -225,9 +230,9 @@ class MainMenuState extends MusicBeatState
 								case 'STORYMODE':
 									MusicBeatState.switchState(new StoryMenuState());
 								case 'FREEPLAY':
-									MusicBeatState.switchState(new FreeplayState());
+									MusicBeatState.switchState(new FreeplaySelector());
 								case 'EXTRAS':
-									MusicBeatState.switchState(new CreditsState());
+									MusicBeatState.switchState(new ExtrasState());
 								case 'OPTIONS':
 									MusicBeatState.switchState(new options.OptionsState());
 							}

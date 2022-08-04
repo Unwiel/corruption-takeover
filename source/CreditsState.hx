@@ -79,8 +79,16 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Psych Engine Android'],
-			['M.A. Jigsaw',		    'majigsaw',		    'Main Coder of The Port',	 'https://www.youtube.com/channel/UC2Sk7vtPzOvbVzdVTWrribQ',	    'F73838'],
+			['Corruption Takeover Team'],
+			['PieDaDude',		    'piesatou',		    'Director, Main Artist',	 'https://twitter.com/PietroSatou',	    '8e78a5'],
+			['KazzYrus',		    'kazzyrus',		    'Main Coder, Main Animator, UI Artist',	 'https://twitter.com/kazzyrus',	    '1a182a'],
+			['AzuriParker',		    'azu',		    'Composer (Frostbite, Loaded and One-Shot)',	 'https://www.youtube.com/channel/UC-yyb7MEYEZM_NOkithOW_A',	    'b4005a'],
+			['MarStarBro',		    'marstar',		    'Composer (Unable)',	 'https://www.youtube.com/channel/UClcxyfiBOora2dYxtMpv7Qw',	    '834fd5'],
+			['Y _F _MUS',		    'yfmus',		    'Death Screen themes and SFX',	 'https://gamebanana.com/members/1731625',	    '5a2de1'],
+			['BigWes99',		    'bwes',		    "Monster's VA",	 'https://www.youtube.com/channel/UCRZhiC51iYs2nzQ7lhJWglA',	    '8e78a5'],
+			['Spring',		    'spring',		    'Coder',	 'https://www.youtube.com/channel/UCLNawFGd99LWhoKug5kD7WA',	    '907d75'],
+			['Cloudy',		    'cloudy',		    'Charter',	 'https://www.youtube.com/channel/UCHP9a0vQy-RoxQksIPVwAag',	    '5ae187'],
+			['niffirg',		    'niffirg',		    'Charter',	 'https://twitter.com/n1ffirg',	    '3c37e1'],
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',					'https://twitter.com/river_oaken',		'C30085'],
@@ -180,7 +188,7 @@ class CreditsState extends MusicBeatState
 				colorTween.cancel();
 			}
 			FlxG.sound.play(Paths.sound('cancelMenu'));
-			MusicBeatState.switchState(new MainMenuState());
+			MusicBeatState.switchState(new ExtrasState());
 		}
 		if(controls.ACCEPT) {
 			CoolUtil.browserLoad(creditsStuff[curSelected][3]);

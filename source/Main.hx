@@ -3,7 +3,6 @@ package;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.FlxState;
-
 import openfl.Assets;
 import openfl.Lib;
 import openfl.display.FPS;
@@ -25,7 +24,11 @@ class Main extends Sprite
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
 	public static var fpsVar:FPS;
-	public static var path:String = System.applicationStorageDirectory;																
+	#if android
+	public static var path:String = System.applicationStorageDirectory;					
+	#else
+	public static var path:String = '';					
+	#end									
 
 	public static function main():Void
 	{
@@ -36,7 +39,7 @@ class Main extends Sprite
 	{
 
 		super();
-		SUtil.uncaughtErrorHandler();
+		SUtil.gameCrashCheck();
 
 		if (stage != null)
 		{
@@ -60,8 +63,6 @@ class Main extends Sprite
 		setupGame();
 	}
 
-        
-
 	private function setupGame():Void
 	{
 		var stageWidth:Int = Lib.current.stage.stageWidth;
@@ -81,14 +82,8 @@ class Main extends Sprite
 		#end     
 
 		ClientPrefs.loadDefaultKeys();
-		SUtil.check();
+		SUtil.doTheCheck();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
-
-                var ourSource:String = "assets/videos/DO NOT DELETE OR GAME WILL CRASH/dontDelete.webm";
-
-                
-                
-                
 
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
