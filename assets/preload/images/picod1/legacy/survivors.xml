@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="survivors.png">
+	<!-- Created with Adobe Animate version 22.0.2.168 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Survivors Idle0000" x="0" y="0" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0001" x="0" y="0" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0002" x="550" y="0" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0003" x="550" y="0" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0004" x="1100" y="0" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0005" x="1100" y="0" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0006" x="0" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0007" x="0" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0008" x="550" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0009" x="550" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0010" x="550" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0011" x="550" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0012" x="550" y="607" width="550" height="607"/>
+	<SubTexture name="Survivors Idle0013" x="550" y="607" width="550" height="607"/>
+</TextureAtlas>
