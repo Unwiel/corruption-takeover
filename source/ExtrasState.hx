@@ -15,10 +15,10 @@ class ExtrasState extends MusicBeatState
 	var curSelected:Int = 0;
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	var optionShit:Array<String> = [
-		'CREDITS',
+		'credits',
 		'DIARY',
 		'GAMEJOLT',
-		'MODS'
+		'mods'
 	];
 
 	override function create()
@@ -131,11 +131,11 @@ class ExtrasState extends MusicBeatState
 
 								switch (daChoice)
 								{
-									case 'CREDITS':
+									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'DIARY':
 										MusicBeatState.switchState(new DiaryState());
-									case 'MODS':
+									case 'mods':
 										MusicBeatState.switchState(new ModsMenuState());
 								}
 							});
