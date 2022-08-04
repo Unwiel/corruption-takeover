@@ -74,6 +74,7 @@ class TitleState extends MusicBeatState
 	
 	var titleJSON:TitleData;
 	
+        public static var bgGenerated:String = 'mall';
 	public static var updateVersion:String = '';
 
 	override public function create():Void
@@ -81,6 +82,18 @@ class TitleState extends MusicBeatState
                 #if android
 		FlxG.android.preventDefaultKeys = [BACK];
 		#end
+
+                var randomInt:Int = FlxG.random.int(0, 2);
+
+                switch (randomInt)
+		{
+			case 0:
+				bgGenerated = 'mall';
+			case 1:
+				bgGenerated = 'parkingFront';
+			case 2:
+				bgGenerated = 'parkingSide';
+		}
 
 		#if MODS_ALLOWED
 		// Just to load a mod on start up if ya got one. For mods that change the menu music and bg
