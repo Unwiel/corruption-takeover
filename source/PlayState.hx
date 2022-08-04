@@ -491,7 +491,14 @@ class PlayState extends MusicBeatState
 				add(limopico);
 				
 				skidandnene = new FlxSprite(-500, 150);
-				skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
+				if (ClientPrefs.legacy)
+				{
+				    skidandnene.frames = Paths.getSparrowAtlas('picod1/legacy/survivors');
+				}
+				else
+				{
+				   skidandnene.frames = Paths.getSparrowAtlas('picod1/normal/survivors');
+				} 
 				skidandnene.animation.addByPrefix('bop', 'Survivors Idle0', 24, false);
 				skidandnene.scale.set(0.7, 0.7);
 				skidandnene.animation.play('bop');
@@ -535,7 +542,14 @@ class PlayState extends MusicBeatState
 				limopico.antialiasing = ClientPrefs.globalAntialiasing;
 				
 				skidandnene = new FlxSprite(-500, 150);
-				skidandnene.frames = Paths.getSparrowAtlas('picod2/SkidNeneStand');
+				if (ClientPrefs.legacy)
+				{
+				    skidandnene.frames = Paths.getSparrowAtlas('picod2/legacy/SkidNeneStand');
+				}
+				else
+				{
+				    skidandnene.frames = Paths.getSparrowAtlas('picod2/normal/SkidNeneStand');
+				} 
 				skidandnene.animation.addByPrefix('bop', 'Nene Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop2', 'Nene ALT Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop3', 'Nene LAST Stand Idle0', 24, false);
@@ -600,10 +614,31 @@ class PlayState extends MusicBeatState
 				overlaypico.alpha = 0;
 				add(overlaypico);
 				overlaypico.cameras = [camOther];
-				
-				video = new WebmPlayerS("assets/videos/oneshotcut.webm");
+				if (ClientPrefs.lowQuality)
+				{
+				   if (!ClientPrefs.legacy)
+				   {
+				      video = new WebmPlayerS("assets/videos/oneshotcut-opt.webm");
+				   }
+				   else
+				   {
+				     video = new WebmPlayerS("assets/videos/oneshotcut-legacy-opt.webm");
+				   } 
+				}
+				else
+				{
+				    if (!ClientPrefs.legacy)
+				    {
+				       video = new WebmPlayerS("assets/videos/oneshotcut.webm");
+				    }
+				   else
+				   {
+				       video = new WebmPlayerS("assets/videos/oneshotcut-legacy.webm");
+				   } 
+				} 
 				video.setGraphicSize(FlxG.width);
 				video.cameras = [camHUD];
+				video.antialiasing = ClientPrefs.globalAntialiasing; 
 				add(video);
 					
 				video.visible = false;
