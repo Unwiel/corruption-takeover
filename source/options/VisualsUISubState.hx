@@ -76,6 +76,13 @@ class VisualsUISubState extends BaseOptionsMenu
 			'bool',
 			true);
 		addOption(option);
+		
+		var option:Option = new Option('Legacy Mode',
+			"If unchecked, desactivates Legacy Mode\nwhich brings up the sprites\nfrom newest updates.",
+			'legacy',
+			'bool',
+			true);
+		addOption(option);muy 
 
 		var option:Option = new Option('Health Bar Transparency',
 			'How much transparent should the health bar and icons be.',
