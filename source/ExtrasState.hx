@@ -17,8 +17,7 @@ class ExtrasState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'credits',
 		'DIARY',
-		'GAMEJOLT',
-		'mods'
+		'GAMEJOLT'
 	];
 
 	override function create()
@@ -136,7 +135,7 @@ class ExtrasState extends MusicBeatState
 									case 'DIARY':
 										MusicBeatState.switchState(new DiaryState());
 									case 'mods':
-										MusicBeatState.switchState(new ModsMenuState());
+										//MusicBeatState.switchState(new ModsMenuState());
 								}
 							});
 						}
