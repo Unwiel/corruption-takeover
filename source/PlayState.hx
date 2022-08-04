@@ -497,7 +497,7 @@ class PlayState extends MusicBeatState
 				}
 				else
 				{
-				   skidandnene.frames = Paths.getSparrowAtlas('picod1/normal/survivors');
+				   skidandnene.frames = Paths.getSparrowAtlas('picod1/survivors');
 				} 
 				skidandnene.animation.addByPrefix('bop', 'Survivors Idle0', 24, false);
 				skidandnene.scale.set(0.7, 0.7);
@@ -548,7 +548,7 @@ class PlayState extends MusicBeatState
 				}
 				else
 				{
-				    skidandnene.frames = Paths.getSparrowAtlas('picod2/normal/SkidNeneStand');
+				    skidandnene.frames = Paths.getSparrowAtlas('picod2/SkidNeneStand');
 				} 
 				skidandnene.animation.addByPrefix('bop', 'Nene Stand Idle0', 24, false);
 				skidandnene.animation.addByPrefix('bop2', 'Nene ALT Stand Idle0', 24, false);
