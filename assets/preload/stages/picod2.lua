@@ -1,5 +1,5 @@
 
 function onCreatePost()
   
-  setObjectOrder('boyfriendGroup', getObjectOrder('limo'))
+  setObjectOrder('boyfriendGroup', getObjectOrder('limopico'))
 end 
